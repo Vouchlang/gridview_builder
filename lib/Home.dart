@@ -41,8 +41,10 @@ setState(() {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Testing Gridview Builder', style: TextStyle(color: Colors.white),),
-        backgroundColor: Colors.indigo[900],
+        title: Text('Testing Gridview Builder', style: TextStyle(color: Colors.indigo[900], fontSize: 15),),
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        elevation: 2,
       ),
       body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -50,16 +52,16 @@ setState(() {
         currentIndex: currentIndex,
         selectedItemColor: Colors.indigo[900],
         unselectedItemColor: Colors.grey,
-        selectedFontSize: 12,
-        unselectedFontSize: 12,
+        selectedFontSize: 10,
+        unselectedFontSize: 10,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: 'ទំព័រដើម',
           ),
           BottomNavigationBarItem(
               icon: Icon(Icons.account_box,),
-              label: 'Account'
+              label: 'ចូលគណនី'
           )
         ],
       )

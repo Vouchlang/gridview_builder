@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'News_Event.dart';
 import 'Registration.dart';
 
@@ -22,7 +23,6 @@ class grid_home extends StatefulWidget {
   'assets/image/Guest_About.png',
   'assets/image/Guest_Language.png',
   'assets/image/Guest_QA.png',
-   'assets/image/Guest_QA.png',
 ];
 
 final List<String> txt=[
@@ -36,10 +36,12 @@ final List<String> txt=[
   'អំពីយើង',
   'ផ្លាស់ប្ដូរភាសា',
   'FAQ',
-  'Social Media',
 ];
 
 class _grid_homeState extends State<grid_home> {
+
+  final Uri url = Uri.parse("https://ww3.read-onepiece.net/manga/one-piece-chapter-1059/");
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,8 +85,8 @@ class _grid_homeState extends State<grid_home> {
                   shrinkWrap: true,
                   physics: ScrollPhysics(),
                   crossAxisCount: 2,
-                  mainAxisSpacing: 10,
-                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 5,
+                  crossAxisSpacing: 5,
                   childAspectRatio: 2,
                   padding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
                   children: List.generate(image.length, (index) => Card(
@@ -126,7 +128,8 @@ class _grid_homeState extends State<grid_home> {
                   // crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    IconButton(onPressed: (){}, icon: Image.asset('assets/image/SM_Facebook.png'),),
+                    IconButton(onPressed: (){launchUrl(url);},
+                      icon: Image.asset('assets/image/SM_Facebook.png'),),
                     IconButton(onPressed: (){}, icon: Image.asset('assets/image/SM_IG.png'),),
                     IconButton(onPressed: (){}, icon: Image.asset('assets/image/SM_Yt.png'),),
                     IconButton(onPressed: (){}, icon: Image.asset('assets/image/SM_Telegram.png'),),
