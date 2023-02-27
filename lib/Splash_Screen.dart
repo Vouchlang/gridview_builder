@@ -28,13 +28,12 @@ class _Splash_ScreenState extends State<Splash_Screen> {
 
       body: Container(
           width: double.infinity,
-          // height: double.infinity,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/image/usea_bg.jpg'),
-              fit: BoxFit.cover,
-            )
-          ),
+          // decoration: BoxDecoration(
+          //   image: DecorationImage(
+          //     image: AssetImage('assets/image/usea_bg.jpg'),
+          //     fit: BoxFit.cover,
+          //   )
+          // ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

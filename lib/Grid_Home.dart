@@ -40,7 +40,11 @@ final List<String> txt=[
 
 class _grid_homeState extends State<grid_home> {
 
-  final Uri url = Uri.parse("https://ww3.read-onepiece.net/manga/one-piece-chapter-1059/");
+  final Uri urlFb = Uri.parse("https://www.facebook.com/usea.edu.kh");
+  final Uri urlIg = Uri.parse("https://ww3.read-onepiece.net/manga/one-piece-chapter-1059/");
+  final Uri urlYt = Uri.parse("https://www.youtube.com/@universityofsouth-eastasia8619");
+  final Uri urlTel = Uri.parse("https://t.me/cpsteamsports");
+  final Uri urlWeb = Uri.parse("http://www.usea.edu.kh/");
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +107,7 @@ class _grid_homeState extends State<grid_home> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Image.asset(image[index], scale: 9,),
-                            SizedBox(height: 5,),
+                            SizedBox(height: 5, ),
                             Text(txt[index], style: TextStyle(fontSize: 12, fontFamily: 'KhmerOSbattambang'),)
                           ],),
                       ),
@@ -128,12 +132,12 @@ class _grid_homeState extends State<grid_home> {
                   // crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    IconButton(onPressed: (){launchUrl(url);},
+                    IconButton(onPressed: (){launchUrl(urlFb);},
                       icon: Image.asset('assets/image/SM_Facebook.png'),),
-                    IconButton(onPressed: (){}, icon: Image.asset('assets/image/SM_IG.png'),),
-                    IconButton(onPressed: (){}, icon: Image.asset('assets/image/SM_Yt.png'),),
-                    IconButton(onPressed: (){}, icon: Image.asset('assets/image/SM_Telegram.png'),),
-                    IconButton(onPressed: (){}, icon: Image.asset('assets/image/SM_Website.png'),),
+                    IconButton(onPressed: (){launchUrl(urlIg);}, icon: Image.asset('assets/image/SM_IG.png'),),
+                    IconButton(onPressed: (){launchUrl(urlYt);}, icon: Image.asset('assets/image/SM_Yt.png'),),
+                    IconButton(onPressed: (){launchUrl(urlTel);}, icon: Image.asset('assets/image/SM_Telegram.png'),),
+                    IconButton(onPressed: (){launchUrl(urlWeb);}, icon: Image.asset('assets/image/SM_Website.png'),),
                   ],
                 ),
               ),
