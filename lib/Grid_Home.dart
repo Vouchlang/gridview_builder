@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+import '/Home.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'News_Event.dart';
-import 'Registration.dart';
+import 'Guest_Dashboard/New_Event/News_Event.dart';
+import 'Guest_Dashboard/Registration.dart';
+import 'Class/Class_Home_Screen.dart';
 
 
 class grid_home extends StatefulWidget {
@@ -13,30 +15,57 @@ class grid_home extends StatefulWidget {
   State<grid_home> createState() => _grid_homeState();
 }
 
- final List<String> image=[
-  'assets/image/Guest_News.png',
-  'assets/image/Guest_Regis.png',
-  'assets/image/Guest_Program.png',
-  'assets/image/Guest_Scholarship.png',
-  'assets/image/Guest_Career.png',
-  'assets/image/Guest_VDO.png',
-  'assets/image/Guest_Contact.png',
-  'assets/image/Guest_About.png',
-  'assets/image/Guest_Language.png',
-  'assets/image/Guest_QA.png',
-];
-
-final List<String> txt=[
-  'ព្រឹត្តិការណ៍',
-  'ការចុះឈ្មោះ',
-  'កម្មវិធីសិក្សា',
-  'អាហារូបករណ៍',
-  'ព័ត៌មានការងារ',
-  'វីដេអូ',
-  'ទំនាក់ទំនង',
-  'អំពីយើង',
-  'ផ្លាស់ប្ដូរភាសា',
-  'FAQ',
+  List<Home_Screen> home_screen = [
+  Home_Screen(
+    name: 'ព្រឹត្តិការណ៍',
+    img: 'assets/image/Guest_News.png',
+    screen: New_Event(),
+  ),
+  Home_Screen(
+    name:'ការចុះឈ្មោះ',
+    img:'assets/image/Guest_Regis.png',
+    screen: Registration(),
+  ),
+  Home_Screen(
+    name:'កម្មវិធីសិក្សា',
+    img:'assets/image/Guest_Program.png',
+    screen: Registration(),
+  ),
+  Home_Screen(
+    name:'អាហារូបករណ៍',
+    img:'assets/image/Guest_Scholarship.png',
+    screen: New_Event(),
+  ),
+  Home_Screen(
+    name:'ព័ត៌មានការងារ',
+    img:'assets/image/Guest_Career.png',
+    screen: New_Event(),
+  ),
+  Home_Screen(
+    name:'វីដេអូ',
+    img:'assets/image/Guest_VDO.png',
+    screen: New_Event(),
+  ),
+  Home_Screen(
+    name:'ទំនាក់ទំនង',
+    img:'assets/image/Guest_Contact.png',
+    screen: New_Event(),
+  ),
+  Home_Screen(
+    name:'អំពីយើង',
+    img:'assets/image/Guest_About.png',
+    screen: New_Event(),
+  ),
+  Home_Screen(
+    name:'ផ្លាស់ប្ដូរភាសា',
+    img:'assets/image/Guest_Language.png',
+    screen: New_Event(),
+  ),
+  Home_Screen(
+    name:'FAQ',
+    img:'assets/image/Guest_QA.png',
+    screen: New_Event(),
+  ),
 ];
 
 class _grid_homeState extends State<grid_home> {
@@ -95,38 +124,39 @@ class _grid_homeState extends State<grid_home> {
                   crossAxisSpacing: 5,
                   childAspectRatio: 2,
                   padding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-                  children: List.generate(image.length, (index) => Card(
-                    elevation: 3,
-                    shadowColor: Colors.grey[200],
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
+                  children: List.generate(home_screen.length, (index) => Card(
+                  elevation: 3,
+                  shadowColor: Colors.grey[200],
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+                        return home_screen[index].screen;
+                      }));
+                    },
+                    child: Container(
+                      padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(home_screen[index].img, scale: 7,),
+                          SizedBox(height: 5, ),
+                          Text(home_screen[index].name, style: TextStyle(fontSize: 12, fontFamily: 'KhmerOSbattambang'),)
+                        ],),
                     ),
-                    child: InkWell(
-                      onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) =>New_Event()));
-                      },
-                      child: Container(
-                        padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Image.asset(image[index], scale: 7,),
-                            SizedBox(height: 5, ),
-                            Text(txt[index], style: TextStyle(fontSize: 12, fontFamily: 'KhmerOSbattambang'),)
-                          ],),
-                      ),
-                    ),
-                  )),),
-
+                  ),
+                )),),
               ),
               SizedBox(height: 15,),
-        Container(
+              Container(
           // height: 50,
           margin: EdgeInsets.fromLTRB(15, 0, 15, 15),
           decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(5),
+              borderRadius: BorderRadius.circular(10),
               boxShadow: [
                 BoxShadow(
                     offset: Offset(0, 1),

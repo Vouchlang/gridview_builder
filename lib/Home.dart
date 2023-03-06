@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gridview_builder/Notifications.dart';
+import 'package:gridview_builder/Guest_Dashboard/Notifications.dart';
 import 'Grid_Home.dart' as Grid_Home;
 import 'Grid_Acc.dart' as Grid_Acc;
 
@@ -55,7 +55,7 @@ class _HomeState extends State<Home>with SingleTickerProviderStateMixin {
               child: Center(
                 child: IconButton(
                     onPressed: (){setState(() {
-                      Navigator.push(context, MaterialPageRoute(builder: (ctx)=>Notifications()));
+                      Navigator.push(context, MaterialPageRoute(builder: (ctx)=> Notifications()));
                     });},
                     icon: Icon(
                         Icons.notifications,
@@ -80,12 +80,12 @@ class _HomeState extends State<Home>with SingleTickerProviderStateMixin {
         unselectedFontSize: 10,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.home, size: 20,),
             label: 'ទំព័រដើម',
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.account_box,),
-              label: 'ចូលគណនី'
+              icon: Icon(Icons.account_box, size: 20,),
+              label: 'ចូលគណនី',
           )
         ],
       )

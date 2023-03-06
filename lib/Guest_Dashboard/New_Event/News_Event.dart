@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '/Class/Class_News_Events.dart';
 
 class New_Event extends StatefulWidget {
   const New_Event({Key? key}) : super(key: key);
@@ -9,9 +10,49 @@ class New_Event extends StatefulWidget {
 
 class _New_EventState extends State<New_Event> {
 
+  List<News_Event> news_event = [
+    News_Event(
+        img: 'img',
+        title: 'title',
+        icon1: 'icon1',
+        txt_date: 'txt_date',
+        icon2: 'icon2',
+        txt_time: 'txt_time',
+        description: 'description'),
+    News_Event(
+        img: 'img1',
+        title: 'title1',
+        icon1: 'icon3',
+        txt_date: 'txt_date1',
+        icon2: 'icon4',
+        txt_time: 'txt_time1',
+        description: 'description1'),
+    News_Event(
+        img: 'img1',
+        title: 'title1',
+        icon1: 'icon3',
+        txt_date: 'txt_date1',
+        icon2: 'icon4',
+        txt_time: 'txt_time1',
+        description: 'description1'),
+    News_Event(
+        img: 'img1',
+        title: 'title1',
+        icon1: 'icon3',
+        txt_date: 'txt_date1',
+        icon2: 'icon4',
+        txt_time: 'txt_time1',
+        description: 'description1'),
+  ];
+
   List<String> tab_txt = [
     "ព្រឹត្តិការណ៍នាពេលខាងមុខ",
     "ព្រឹត្តិការណ៍មុនៗ",
+  ];
+
+  List<IconData> icons = [
+    Icons.home,
+    Icons.explore,
   ];
 
   int current = 0;
@@ -43,16 +84,17 @@ class _New_EventState extends State<New_Event> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(
-              // width: double.negativeInfinity,
-              width: 300,
-              height: 65,
+              width: 330,
+              height: 75,
               child: ListView.builder(
-                  physics: const BouncingScrollPhysics(),
+                  // physics: NeverScrollableScrollPhysics(),
+                physics: AlwaysScrollableScrollPhysics(),
                   itemCount: tab_txt.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (ctx, index) {
                     return Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         GestureDetector(
                           onTap: () {
@@ -61,10 +103,9 @@ class _New_EventState extends State<New_Event> {
                             });
                           },
                           child: AnimatedContainer(
-                            duration: const Duration(milliseconds: 300),
-                            margin: const EdgeInsets.all(10),
-                            padding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
-                            height: 40,
+                            duration: Duration(milliseconds: 300),
+                            margin: EdgeInsets.all(15),
+                            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
                             decoration: BoxDecoration(
                               color: current == index
                                   ? Colors.indigo[900]
@@ -94,9 +135,28 @@ class _New_EventState extends State<New_Event> {
                     );
                   }),
             ),
+            SizedBox(height: 15,),
             Container(
+              width: double.infinity,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    icons[current],
+                    size: 100,
+                    color: Colors.deepPurple,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    tab_txt[current],
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 15,),
 
-            )
           ],
         ),
       ),
