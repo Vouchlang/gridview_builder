@@ -50,8 +50,12 @@ class _grid_accState extends State<grid_acc> {
                     childAspectRatio: 2,
                     padding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
                     children: List.generate(user_acc.length, (index) => Card(
-                      elevation: 2,
+                      elevation: 3,
                       color: Colors.white,
+                      shadowColor: Colors.grey[200],
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)
+                      ),
                       child: InkWell(
                         onTap: (){
                           Navigator.push(context, MaterialPageRoute(builder: (context) =>Registration()));
@@ -60,7 +64,7 @@ class _grid_accState extends State<grid_acc> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Image.asset(user_image[index], scale: 9,),
+                              Image.asset(user_image[index], scale: 7,),
                               SizedBox(height: 5, ),
                               Text(user_acc[index], style: TextStyle(fontSize: 12, fontFamily: 'KhmerOSbattambang'),)
                             ],),

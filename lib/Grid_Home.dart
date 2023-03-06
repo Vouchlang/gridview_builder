@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'News_Event.dart';
@@ -49,6 +50,7 @@ class _grid_homeState extends State<grid_home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xF5F5F7FE),
       body: Center(
         child: ListView(
             children: [
@@ -59,7 +61,7 @@ class _grid_homeState extends State<grid_home> {
                 child: Padding(
                   padding: EdgeInsets.symmetric(vertical: 0, horizontal: 15),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(5),
+                    borderRadius: BorderRadius.circular(10),
                     child: ImageSlideshow(
                       children: [
                         Image.asset(
@@ -94,8 +96,11 @@ class _grid_homeState extends State<grid_home> {
                   childAspectRatio: 2,
                   padding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
                   children: List.generate(image.length, (index) => Card(
-                    elevation: 2,
-                    color: Colors.white,
+                    elevation: 3,
+                    shadowColor: Colors.grey[200],
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                     child: InkWell(
                       onTap: (){
                         Navigator.push(context, MaterialPageRoute(builder: (context) =>New_Event()));
@@ -106,43 +111,43 @@ class _grid_homeState extends State<grid_home> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Image.asset(image[index], scale: 9,),
+                            Image.asset(image[index], scale: 7,),
                             SizedBox(height: 5, ),
                             Text(txt[index], style: TextStyle(fontSize: 12, fontFamily: 'KhmerOSbattambang'),)
                           ],),
                       ),
                     ),
-                  )),),),
-              SizedBox(height: 15,),
-              Container(
-                // height: 50,
-                margin: EdgeInsets.fromLTRB(15, 0, 15, 15),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(5),
-                  boxShadow: [
-                    BoxShadow(
-                      offset: Offset(0, 1),
-                      blurRadius: 1,
-                      color: Colors.grey
-                    )
-                  ]
-                ),
-                child: Row(
-                  // crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    IconButton(onPressed: (){launchUrl(urlFb);},
-                      icon: Image.asset('assets/image/SM_Facebook.png'),),
-                    IconButton(onPressed: (){launchUrl(urlIg);}, icon: Image.asset('assets/image/SM_IG.png'),),
-                    IconButton(onPressed: (){launchUrl(urlYt);}, icon: Image.asset('assets/image/SM_Yt.png'),),
-                    IconButton(onPressed: (){launchUrl(urlTel);}, icon: Image.asset('assets/image/SM_Telegram.png'),),
-                    IconButton(onPressed: (){launchUrl(urlWeb);}, icon: Image.asset('assets/image/SM_Website.png'),),
-                  ],
-                ),
-              ),
-            ],
+                  )),),
 
+              ),
+              SizedBox(height: 15,),
+        Container(
+          // height: 50,
+          margin: EdgeInsets.fromLTRB(15, 0, 15, 15),
+          decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(5),
+              boxShadow: [
+                BoxShadow(
+                    offset: Offset(0, 1),
+                    blurRadius: 1,
+                    color: Colors.grey
+                )
+              ]
+          ),
+          child: Row(
+            // crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              IconButton(onPressed: (){launchUrl(urlFb);},
+                icon: Image.asset('assets/image/SM_Facebook.png'),),
+              IconButton(onPressed: (){launchUrl(urlIg);}, icon: Image.asset('assets/image/SM_IG.png'),),
+              IconButton(onPressed: (){launchUrl(urlYt);}, icon: Image.asset('assets/image/SM_Yt.png'),),
+              IconButton(onPressed: (){launchUrl(urlTel);}, icon: Image.asset('assets/image/SM_Telegram.png'),),
+              IconButton(onPressed: (){launchUrl(urlWeb);}, icon: Image.asset('assets/image/SM_Website.png'),),
+            ],
+          ),),
+        ]
         )
       ),
     );

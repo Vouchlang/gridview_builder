@@ -19,9 +19,15 @@ class _New_EventState extends State<New_Event> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('News Event', style: TextStyle(color: Colors.indigo[900], fontSize: 16, fontFamily: 'Poppins', fontWeight: FontWeight.w500)),
+      appBar: AppBar(
+        title: Text('News Event',
+            style: TextStyle(
+                color: Colors.indigo[900],
+                fontSize: 16,
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.w500,
+            )),
       backgroundColor: Colors.white,
-      centerTitle: true,
         elevation: 1,
         iconTheme: IconThemeData.fallback(),
         leading: IconButton(
