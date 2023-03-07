@@ -82,6 +82,7 @@ flutter:
    - family: KhmerOSbattambang
      fonts:
        - asset: fonts/KhmerOSBattambang.ttf
+       - asset: fonts/KhmerOSbattambang-Bold.ttf
          weight: 700
    - family: KhmerOSmuol
      fonts:

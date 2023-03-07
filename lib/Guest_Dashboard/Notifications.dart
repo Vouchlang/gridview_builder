@@ -11,6 +11,7 @@ class _NotificationsState extends State<Notifications> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xF5F5F7FE),
       appBar: AppBar(title: Text('Notifications', style: TextStyle(color: Colors.indigo[900], fontSize: 16, fontFamily: 'Poppins', fontWeight: FontWeight.w500),),
         // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         backgroundColor: Colors.white,

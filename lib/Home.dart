@@ -68,10 +68,12 @@ class _HomeState extends State<Home>with SingleTickerProviderStateMixin {
         ],
         centerTitle: true,
         backgroundColor: Colors.white,
-        elevation: 2,
+        elevation: 1,
       ),
       body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
+        elevation: 1,
         onTap: onTap,
         currentIndex: currentIndex,
         selectedItemColor: Colors.indigo[900],

@@ -10,9 +10,10 @@ class Registration extends StatefulWidget {
 class _RegistrationState extends State<Registration> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text('Registration', style: TextStyle(color: Colors.indigo[900], fontSize: 16, fontFamily: 'Poppins', fontWeight: FontWeight.w500)),
-      backgroundColor: Colors.white,
-      centerTitle: true,
+    return Scaffold(
+        backgroundColor: Color(0xF5F5F7FE),
+      appBar: AppBar(title: Text('Registration', style: TextStyle(color: Colors.indigo[900], fontSize: 16, fontFamily: 'Poppins', fontWeight: FontWeight.w500)),
+      backgroundColor: Colors.white, centerTitle: true,
       elevation: 1,
       iconTheme: IconThemeData.fallback(),
       leading: IconButton(
@@ -23,6 +24,9 @@ class _RegistrationState extends State<Registration> {
         ),
         onPressed: ()=> Navigator.of(context).pop(),),
 
-    ),);
+    ),
+    body: Container(
+      child: Text('hi')
+    ));
   }
 }

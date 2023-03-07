@@ -151,32 +151,27 @@ class _grid_homeState extends State<grid_home> {
                 )),),
               ),
               SizedBox(height: 15,),
-              Container(
-          // height: 50,
-          margin: EdgeInsets.fromLTRB(15, 0, 15, 15),
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                BoxShadow(
-                    offset: Offset(0, 1),
-                    blurRadius: 1,
-                    color: Colors.grey
-                )
-              ]
-          ),
+              Card(
+                elevation: 3,
+                shadowColor: Colors.grey[200],
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                margin:  EdgeInsets.fromLTRB(15, 0, 15, 15),
+
           child: Row(
             // crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              IconButton(onPressed: (){launchUrl(urlFb);},
-                icon: Image.asset('assets/image/SM_Facebook.png'),),
-              IconButton(onPressed: (){launchUrl(urlIg);}, icon: Image.asset('assets/image/SM_IG.png'),),
-              IconButton(onPressed: (){launchUrl(urlYt);}, icon: Image.asset('assets/image/SM_Yt.png'),),
-              IconButton(onPressed: (){launchUrl(urlTel);}, icon: Image.asset('assets/image/SM_Telegram.png'),),
-              IconButton(onPressed: (){launchUrl(urlWeb);}, icon: Image.asset('assets/image/SM_Website.png'),),
+                IconButton(onPressed: (){launchUrl(urlFb);},
+                  icon: Image.asset('assets/image/SM_Facebook.png'),),
+                IconButton(onPressed: (){launchUrl(urlIg);}, icon: Image.asset('assets/image/SM_IG.png'),),
+                IconButton(onPressed: (){launchUrl(urlYt);}, icon: Image.asset('assets/image/SM_Yt.png'),),
+                IconButton(onPressed: (){launchUrl(urlTel);}, icon: Image.asset('assets/image/SM_Telegram.png'),),
+                IconButton(onPressed: (){launchUrl(urlWeb);}, icon: Image.asset('assets/image/SM_Website.png'),),
             ],
-          ),),
+          ),
+              ),
         ]
         )
       ),
