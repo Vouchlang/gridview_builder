@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gridview_builder/Guest_Dashboard/New_Event/Up_Event_Detail.dart';
+import '/Guest_Dashboard/New_Event/Up_Event_Detail.dart';
 import '/Guest_Dashboard/Notifications.dart';
-import '/Class/Class_Up_News_Events.dart';
+import '/Class_Model/Class_Up_News_Events.dart';
 
 class Upcoming_Event extends StatefulWidget {
   const Upcoming_Event({Key? key}) : super(key: key);
@@ -21,7 +21,7 @@ class _Upcoming_EventState extends State<Upcoming_Event> {
           itemBuilder: (context, index) {
             return Container(
               child: Card(
-                margin: EdgeInsets.fromLTRB(15, 0, 15, 15),
+                margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
                 elevation: 4,
                 shadowColor: Colors.grey[200],
                 shape: RoundedRectangleBorder(
@@ -58,7 +58,7 @@ class _Upcoming_EventState extends State<Upcoming_Event> {
                                 ),),),
                               SizedBox(height: 5,),
                               Container(width: double.infinity,
-                                child: Text(up_news_event[index].description, style: TextStyle(
+                                child: Text(up_news_event[index].description, textAlign: TextAlign.justify, style: TextStyle(
                                     fontSize: 10, fontWeight: FontWeight.w500, fontFamily: 'KhmerOSBattambang'
                                 ),),),
                               SizedBox(height: 5,),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '/Class/Class_Past_News_Event.dart';
+import '/Class_Model/Class_Past_News_Event.dart';
 class Past_Event_Detail extends StatelessWidget {
 
   final Past_News_Event data;
@@ -29,7 +29,7 @@ class Past_Event_Detail extends StatelessWidget {
           onPressed: ()=> Navigator.of(context).pop(),),
       ),
       body: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 0, 15),
+        margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,7 +63,7 @@ class Past_Event_Detail extends StatelessWidget {
               width: double.infinity,
               margin: EdgeInsets.symmetric(vertical: 0, horizontal: 15),
               child: Align(
-                child: Text(data.detail_description,
+                child: Text(data.detail_description, textAlign: TextAlign.justify,
                   style: TextStyle(
                    fontSize: 11, fontFamily: 'KhmerOSbattambang'
             ),),

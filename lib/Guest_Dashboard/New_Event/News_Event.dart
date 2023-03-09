@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gridview_builder/Guest_Dashboard/New_Event/Past_Event.dart';
 import 'package:gridview_builder/Guest_Dashboard/New_Event/Upcoming_Event.dart';
-import '/Class/Class_Up_News_Events.dart';
+import '/Class_Model/Class_Up_News_Events.dart';
 
 class New_Event extends StatefulWidget {
   const New_Event({Key? key}) : super(key: key);

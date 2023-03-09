@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+import 'package:gridview_builder/Guest_Dashboard/Scholarship/Scholarship.dart';
 import '/Home.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'Guest_Dashboard/New_Event/News_Event.dart';
-import 'Guest_Dashboard/Registration.dart';
-import 'Class/Class_Home_Screen.dart';
+import 'Guest_Dashboard/Registration/Registration.dart';
+import 'Class_Model/Class_Home_Screen.dart';
+import 'Guest_Dashboard/Notifications.dart';
+import 'Guest_Dashboard/Career/Career.dart';
 
 
 class grid_home extends StatefulWidget {
@@ -34,12 +37,12 @@ class grid_home extends StatefulWidget {
   Home_Screen(
     name:'អាហារូបករណ៍',
     img:'assets/image/Guest_Scholarship.png',
-    screen: New_Event(),
+    screen: Scholarship(),
   ),
   Home_Screen(
     name:'ព័ត៌មានការងារ',
     img:'assets/image/Guest_Career.png',
-    screen: New_Event(),
+    screen: Career(),
   ),
   Home_Screen(
     name:'វីដេអូ',
@@ -79,16 +82,57 @@ class _grid_homeState extends State<grid_home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: Image.asset('assets/image/usea_logo.png', scale: 45,),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('សាកលវិទ្យាល័យ សៅស៍អុីសថ៍អេយសៀ', style: TextStyle(color: Colors.indigo[900], fontSize: 10, fontFamily: 'KhmerOSmuol'),),
+                Text('UNIVERSITY OF SOUTH-EAST ASIA', style: TextStyle(color: Colors.indigo[900], fontSize: 11.7, fontFamily: 'Poppins', fontWeight: FontWeight.w500)),
+              ],
+            ),
+          ],
+        ),
+        actions: [
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: Container(
+                width: 35,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    color: Colors.grey[200]
+                ),
+                child: Center(
+                  child: IconButton(
+                      onPressed: (){setState(() {
+                        Navigator.push(context, MaterialPageRoute(builder: (ctx)=> Notifications()));
+                      });},
+                      icon: Icon(
+                        Icons.notifications,
+                        color: Colors.indigo[900],
+                        size: 20,
+                      )),
+                )
+            ),
+          ),
+        ],
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        elevation: 1,
+      ),
       backgroundColor: Color(0xF5F5F7FE),
       body: Center(
         child: ListView(
             children: [
-              SizedBox(height: 15,),
+              SizedBox(height: 10,),
               SizedBox(
-                height: 150,
+                height: 130,
                 width: double.infinity,
                 child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 0, horizontal: 15),
+                  padding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: ImageSlideshow(
@@ -114,16 +158,16 @@ class _grid_homeState extends State<grid_home> {
                   ),
                 ),
               ),
-              SizedBox(height: 15,),
+              SizedBox(height: 10,),
               Expanded(
                 child: GridView.count(
                   shrinkWrap: true,
                   physics: ScrollPhysics(),
                   crossAxisCount: 2,
-                  mainAxisSpacing: 5,
-                  crossAxisSpacing: 5,
+                  mainAxisSpacing: 3,
+                  crossAxisSpacing: 3,
                   childAspectRatio: 2,
-                  padding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+                  padding: EdgeInsets.symmetric(vertical: 0, horizontal: 6),
                   children: List.generate(home_screen.length, (index) => Card(
                   elevation: 3,
                   shadowColor: Colors.grey[200],
@@ -150,14 +194,14 @@ class _grid_homeState extends State<grid_home> {
                   ),
                 )),),
               ),
-              SizedBox(height: 15,),
+              SizedBox(height: 10,),
               Card(
                 elevation: 3,
                 shadowColor: Colors.grey[200],
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
-                margin:  EdgeInsets.fromLTRB(15, 0, 15, 15),
+                margin:  EdgeInsets.fromLTRB(10, 0, 10, 10),
 
           child: Row(
             // crossAxisAlignment: CrossAxisAlignment.center,

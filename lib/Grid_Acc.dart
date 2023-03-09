@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gridview_builder/Guest_Dashboard/New_Event/News_Event.dart';
-import 'Guest_Dashboard/Registration.dart';
-import 'Class/Class_Account_Screen.dart';
+import 'Guest_Dashboard/Registration/Registration.dart';
+import 'Class_Model/Class_Account_Screen.dart';
 
 class grid_acc extends StatefulWidget {
   const grid_acc({Key? key}) : super(key: key);
@@ -56,10 +56,10 @@ class _grid_accState extends State<grid_acc> {
                     shrinkWrap: true,
                     physics: ScrollPhysics(),
                     crossAxisCount: 2,
-                    mainAxisSpacing: 5,
-                    crossAxisSpacing: 5,
+                    mainAxisSpacing: 3,
+                    crossAxisSpacing: 3,
                     childAspectRatio: 2,
-                    padding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+                    padding: EdgeInsets.symmetric(vertical: 0, horizontal: 6),
                     children: List.generate(account_screen.length, (index) => Card(
                       elevation: 3,
                       color: Colors.white,

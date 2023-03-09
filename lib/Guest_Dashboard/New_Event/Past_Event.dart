@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gridview_builder/Class/Class_Past_News_Event.dart';
-import 'package:gridview_builder/Guest_Dashboard/New_Event/Up_Event_Detail.dart';
+import '/Class_Model/Class_Past_News_Event.dart';
+import '/Guest_Dashboard/New_Event/Up_Event_Detail.dart';
 import '/Guest_Dashboard/Notifications.dart';
 import 'Past_Event_Detail.dart';
 
@@ -22,7 +22,7 @@ class _Past_EventState extends State<Past_Event> {
           itemBuilder: (context, index) {
             return Container(
               child: Card(
-                margin: EdgeInsets.fromLTRB(15, 0, 15, 15),
+                margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
                 elevation: 4,
                 shadowColor: Colors.grey[200],
                 shape: RoundedRectangleBorder(
@@ -59,7 +59,7 @@ class _Past_EventState extends State<Past_Event> {
                                 ),),),
                               SizedBox(height: 5,),
                               Container(width: double.infinity,
-                                child: Text(past_news_event[index].description, style: TextStyle(
+                                child: Text(past_news_event[index].description, textAlign: TextAlign.justify, style: TextStyle(
                                     fontSize: 10, fontWeight: FontWeight.w500, fontFamily: 'KhmerOSBattambang'
                                 ),),),
                               SizedBox(height: 5,),
