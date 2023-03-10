@@ -39,6 +39,8 @@ dependencies:
   flutter_image_slideshow: ^0.1.4
   flutter_spinkit: ^5.1.0
   url_launcher: ^6.1.10
+  readmore: ^2.2.0
+  youtube_player_flutter: ^8.1.2
 
 
 dev_dependencies:

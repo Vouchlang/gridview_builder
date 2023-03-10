@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+import 'package:gridview_builder/Guest_Dashboard/About_US/AboutUS.dart';
 import 'package:gridview_builder/Guest_Dashboard/Scholarship/Scholarship.dart';
-import '/Home.dart';
+import 'package:gridview_builder/Guest_Dashboard/VDO/Video.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'Guest_Dashboard/New_Event/News_Event.dart';
 import 'Guest_Dashboard/Registration/Registration.dart';
 import 'Class_Model/Class_Home_Screen.dart';
 import 'Guest_Dashboard/Notifications.dart';
 import 'Guest_Dashboard/Career/Career.dart';
+import 'Guest_Dashboard/Contact/Contact.dart';
 
 
 class grid_home extends StatefulWidget {
@@ -47,17 +49,17 @@ class grid_home extends StatefulWidget {
   Home_Screen(
     name:'វីដេអូ',
     img:'assets/image/Guest_VDO.png',
-    screen: New_Event(),
+    screen: Video(),
   ),
   Home_Screen(
     name:'ទំនាក់ទំនង',
     img:'assets/image/Guest_Contact.png',
-    screen: New_Event(),
+    screen: Contact(),
   ),
   Home_Screen(
     name:'អំពីយើង',
     img:'assets/image/Guest_About.png',
-    screen: New_Event(),
+    screen: AboutUS(),
   ),
   Home_Screen(
     name:'ផ្លាស់ប្ដូរភាសា',

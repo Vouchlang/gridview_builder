@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '/Class_Model/Class_Career.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class Career extends StatefulWidget {
   const Career({Key? key}) : super(key: key);
@@ -11,6 +13,7 @@ class _CareerState extends State<Career> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xF5F5F7FE),
       appBar: AppBar(
         title: Text('ព័ត៌មានការងារ',
             style: TextStyle(
@@ -29,6 +32,44 @@ class _CareerState extends State<Career> {
             size: 15,
           ),
           onPressed: ()=> Navigator.of(context).pop(),),
+      ),
+      body: Container(
+        margin: EdgeInsets.fromLTRB(15, 10, 15, 10),
+        child: ListView.builder(
+          itemCount: career.length,
+        itemBuilder: (context, index){
+          return InkWell(
+            onTap: () => launchUrlString(career[index].link),
+            child: Container(
+              child: Column(
+                children: [
+                  Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundImage: AssetImage(career[index].logo),
+                      radius: 35,
+                    ),
+                    SizedBox(width: 15,),
+                    Column(
+                      children: [
+                        Container(width: 200, child: Text( career[index].position , style: TextStyle(
+                          fontSize: 12,
+                          fontFamily: 'KhmerOSbattambang',
+                          fontWeight: FontWeight.w500,)),),
+                        SizedBox(height: 5,),
+                        Container(width: 200, child: Text( career[index].organization , style: TextStyle(
+                          fontSize: 10,
+                          fontFamily: 'KhmerOSbattambang',
+                          fontWeight: FontWeight.w500,)),)
+                      ],
+                    ),
+                  ],
+                ),
+                  Divider()
+                ]
+              ),
+    ),
+          );}),
       ),
     );
   }

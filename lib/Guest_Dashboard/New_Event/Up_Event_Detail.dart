@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '/Class_Model/Class_Up_News_Events.dart';
+
 class Up_Event_Detail extends StatelessWidget {
 
   final Up_News_Event data;
