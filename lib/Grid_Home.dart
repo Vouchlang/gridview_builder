@@ -160,7 +160,7 @@ class _grid_homeState extends State<grid_home> {
                   ),
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: 7,),
               Expanded(
                 child: GridView.count(
                   shrinkWrap: true,
