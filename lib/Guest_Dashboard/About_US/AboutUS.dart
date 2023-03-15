@@ -41,13 +41,16 @@ class _AboutUSState extends State<AboutUS> {
               return Container(
                 margin: EdgeInsets.fromLTRB(10, 5, 10, 0),
                 child: Card(
-                  elevation: 2,
+                  elevation: 3,
+                  shadowColor: Colors.grey[200],
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)
-                  ),
+                      borderRadius: BorderRadius.circular(10)),
                   child: InkWell(
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (ctx) => aboutUS[index].screen));
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (ctx) => aboutUS[index].screen));
                     },
                     child: Container(
                       padding: EdgeInsets.all(10),

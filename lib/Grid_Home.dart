@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+import 'package:get/get.dart';
 import 'package:gridview_builder/Guest_Dashboard/About_US/AboutUS.dart';
+import 'package:gridview_builder/Guest_Dashboard/Change_Language/Change_Language.dart';
+import 'package:gridview_builder/Guest_Dashboard/FAQ/FAQ.dart';
 import 'package:gridview_builder/Guest_Dashboard/Scholarship/Scholarship.dart';
 import 'package:gridview_builder/Guest_Dashboard/VDO/Video.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -22,7 +25,7 @@ class grid_home extends StatefulWidget {
 
   List<Home_Screen> home_screen = [
   Home_Screen(
-    name: 'ព្រឹត្តិការណ៍',
+    name: 'Events',
     img: 'assets/image/Guest_News.png',
     screen: New_Event(),
   ),
@@ -64,12 +67,12 @@ class grid_home extends StatefulWidget {
   Home_Screen(
     name:'ផ្លាស់ប្ដូរភាសា',
     img:'assets/image/Guest_Language.png',
-    screen: New_Event(),
+    screen: Change_Language(),
   ),
   Home_Screen(
     name:'FAQ',
     img:'assets/image/Guest_QA.png',
-    screen: New_Event(),
+    screen: FAQ(),
   ),
 ];
 
@@ -80,6 +83,8 @@ class _grid_homeState extends State<grid_home> {
   final Uri urlYt = Uri.parse("https://www.youtube.com/@universityofsouth-eastasia8619");
   final Uri urlTel = Uri.parse("https://t.me/cpsteamsports");
   final Uri urlWeb = Uri.parse("http://www.usea.edu.kh/");
+
+  // late String List locale = ['KHMER', 'ENGLISH'];
 
   @override
   Widget build(BuildContext context) {
@@ -131,7 +136,7 @@ class _grid_homeState extends State<grid_home> {
             children: [
               SizedBox(height: 10,),
               SizedBox(
-                height: 130,
+                height: 135,
                 width: double.infinity,
                 child: Padding(
                   padding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
@@ -190,7 +195,7 @@ class _grid_homeState extends State<grid_home> {
                         children: [
                           Image.asset(home_screen[index].img, scale: 7,),
                           SizedBox(height: 5, ),
-                          Text(home_screen[index].name, style: TextStyle(fontSize: 12, fontFamily: 'KhmerOSbattambang'),)
+                          Text(home_screen[index].name.tr, style: TextStyle(fontSize: 12, fontFamily: 'KhmerOSbattambang'))
                         ],),
                     ),
                   ),

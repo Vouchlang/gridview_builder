@@ -31,25 +31,28 @@ class _HomeState extends State<Home>with SingleTickerProviderStateMixin {
     return Scaffold(
 
       body: pages[currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        elevation: 1,
-        onTap: onTap,
-        currentIndex: currentIndex,
-        selectedItemColor: Colors.indigo[900],
-        unselectedItemColor: Colors.grey,
-        selectedFontSize: 10,
-        unselectedFontSize: 10,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home, size: 20,),
-            label: 'ទំព័រដើម',
-          ),
-          BottomNavigationBarItem(
+      bottomNavigationBar: SizedBox(
+        height: 50,
+        child:  BottomNavigationBar(
+          backgroundColor: Colors.white,
+          elevation: 1,
+          onTap: onTap,
+          currentIndex: currentIndex,
+          selectedItemColor: Colors.indigo[900],
+          unselectedItemColor: Colors.grey,
+          selectedFontSize: 10,
+          unselectedFontSize: 10,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home, size: 20,),
+              label: 'ទំព័រដើម',
+            ),
+            BottomNavigationBarItem(
               icon: Icon(Icons.account_box, size: 20,),
               label: 'ចូលគណនី',
-          )
-        ],
+            )
+          ],
+        ),
       )
     );
   }
