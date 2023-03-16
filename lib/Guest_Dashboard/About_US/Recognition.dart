@@ -69,16 +69,18 @@ class _RecognitionState extends State<Recognition> {
                         onTap: () => launchUrlString('https://www.usea.edu.kh/en/Pages/recognition.php'),
                         child: Container(
                           alignment: Alignment.center,
-                          width: 55,
                           padding:
                               EdgeInsets.symmetric(vertical: 5, horizontal: 5),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(5),
                               color: Color(0x142D74F5)),
                           child: Text(
-                            'អានបន្ថែម',
-                            textAlign: TextAlign.justify,
-                            style: TextStyle(fontSize: 10, fontFamily: 'Poppins'),
+                            'អានបន្ថែម', style: TextStyle(
+                              fontSize: 10,
+                              fontFamily: 'KhmerOSbattambang',
+                              fontWeight: FontWeight.w600,
+                              color: Colors.indigo[900]
+                          ),
                           ),
                         ),
                       ),
@@ -121,16 +123,18 @@ class _RecognitionState extends State<Recognition> {
                         onTap: () => launchUrlString('https://www.usea.edu.kh/en/Pages/recognition.php'),
                         child: Container(
                           alignment: Alignment.center,
-                          width: 55,
                           padding:
                           EdgeInsets.symmetric(vertical: 5, horizontal: 5),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(5),
                               color: Color(0x142D74F5)),
                           child: Text(
-                            'អានបន្ថែម',
-                            textAlign: TextAlign.justify,
-                            style: TextStyle(fontSize: 10, fontFamily: 'Poppins'),
+                            'អានបន្ថែម', style: TextStyle(
+                              fontSize: 10,
+                              fontFamily: 'KhmerOSbattambang',
+                              fontWeight: FontWeight.w600,
+                              color: Colors.indigo[900]
+                          ),
                           ),
                         ),
                       ),
@@ -173,16 +177,18 @@ class _RecognitionState extends State<Recognition> {
                         onTap: () => launchUrlString('https://www.usea.edu.kh/en/Pages/recognition.php'),
                         child: Container(
                           alignment: Alignment.center,
-                          width: 55,
                           padding:
                           EdgeInsets.symmetric(vertical: 5, horizontal: 5),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(5),
                               color: Color(0x142D74F5)),
                           child: Text(
-                            'អានបន្ថែម',
-                            textAlign: TextAlign.justify,
-                            style: TextStyle(fontSize: 10, fontFamily: 'Poppins'),
+                            'អានបន្ថែម', style: TextStyle(
+                              fontSize: 10,
+                              fontFamily: 'KhmerOSbattambang',
+                              fontWeight: FontWeight.w600,
+                              color: Colors.indigo[900]
+                          ),
                           ),
                         ),
                       ),

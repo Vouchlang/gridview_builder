@@ -23,7 +23,7 @@ class _Past_EventState extends State<Past_Event> {
             return Container(
               child: Card(
                 margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
-                elevation: 4,
+                elevation: 3,
                 shadowColor: Colors.grey[200],
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)
@@ -66,7 +66,7 @@ class _Past_EventState extends State<Past_Event> {
                               Row(
                                 children: [
                                   Container(child: Image.asset(
-                                    past_news_event[index].icon1, width: 10,
+                                    past_news_event[index].icon1, width: 12,
                                   ),),
                                   SizedBox(width: 5,),
                                   Container(child: Text(past_news_event[index].txt_date, style: TextStyle(
@@ -74,7 +74,7 @@ class _Past_EventState extends State<Past_Event> {
                                   ),),),
                                   SizedBox(width: 15,),
                                   Container(child: Image.asset(
-                                    past_news_event[index].icon2, width: 10,
+                                    past_news_event[index].icon2, width: 12,
                                   ),),
                                   SizedBox(width: 5,),
                                   Container(child: Text(past_news_event[index].txt_time, style: TextStyle(

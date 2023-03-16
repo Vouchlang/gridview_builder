@@ -35,7 +35,7 @@ class _CareerState extends State<Career> {
           onPressed: ()=> Navigator.of(context).pop(),),
       ),
       body: Container(
-        margin: EdgeInsets.fromLTRB(15, 10, 15, 10),
+        margin: EdgeInsets.all(10),
         child: ListView.builder(
           itemCount: career.length,
         itemBuilder: (context, index){

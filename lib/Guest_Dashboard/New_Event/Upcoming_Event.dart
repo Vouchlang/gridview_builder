@@ -22,14 +22,18 @@ class _Upcoming_EventState extends State<Upcoming_Event> {
             return Container(
               child: Card(
                 margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
-                elevation: 4,
+                elevation: 3,
                 shadowColor: Colors.grey[200],
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)
-                ),
+                    borderRadius: BorderRadius.circular(10)),
                 child: InkWell(
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (ctx)=>Up_Event_Detail(data: up_news_event[index],)));
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (ctx) => Up_Event_Detail(
+                                  data: up_news_event[index],
+                                )));
                   },
                   child: Container(
                     child: Column(
@@ -40,45 +44,92 @@ class _Upcoming_EventState extends State<Upcoming_Event> {
                           width: double.maxFinite,
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(10),
-                            child: Image.asset(up_news_event[index].img,
+                            child: Image.asset(
+                              up_news_event[index].img,
                               width: double.maxFinite,
                               fit: BoxFit.cover,
                             ),
                           ),
                         ),
-                        SizedBox(height: 5,),
+                        SizedBox(
+                          height: 5,
+                        ),
                         Container(
                           padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
                           child: Column(
                             children: [
-                              Container(width: double.infinity,
+                              Container(
+                                width: double.infinity,
                                 alignment: Alignment.center,
-                                child: Text(up_news_event[index].title, style: TextStyle(
-                                    fontSize: 12, fontWeight: FontWeight.w500, fontFamily: 'KhmerOSBattambang'
-                                ),),),
-                              SizedBox(height: 5,),
-                              Container(width: double.infinity,
-                                child: Text(up_news_event[index].description, textAlign: TextAlign.justify, style: TextStyle(
-                                    fontSize: 10, fontWeight: FontWeight.w500, fontFamily: 'KhmerOSBattambang'
-                                ),),),
-                              SizedBox(height: 5,),
+                                child: Text(
+                                  up_news_event[index].title,
+                                  textAlign: TextAlign.justify,
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w500,
+                                      fontFamily: 'KhmerOSBattambang'),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Container(
+                                width: double.infinity,
+                                child: Text(
+                                  up_news_event[index].description,
+                                  textAlign: TextAlign.justify,
+                                  style: TextStyle(
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.w500,
+                                      fontFamily: 'KhmerOSBattambang'),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
                               Row(
                                 children: [
-                                  Container(child: Image.asset(
-                                    up_news_event[index].icon1, width: 10,
-                                  ),),
-                                  SizedBox(width: 5,),
-                                  Container(child: Text(up_news_event[index].txt_date, style: TextStyle(
-                                      fontSize: 8, fontWeight: FontWeight.w500, fontFamily: 'KhmerOSBattambang', color: Colors.indigo[900]
-                                  ),),),
-                                  SizedBox(width: 15,),
-                                  Container(child: Image.asset(
-                                    up_news_event[index].icon2, width: 10,
-                                  ),),
-                                  SizedBox(width: 5,),
-                                  Container(child: Text(up_news_event[index].txt_time, style: TextStyle(
-                                      fontSize: 8, fontWeight: FontWeight.w500, fontFamily: 'KhmerOSBattambang', color: Colors.indigo[900]
-                                  ),),),
+                                  Container(
+                                    child: Image.asset(
+                                      up_news_event[index].icon1,
+                                      width: 12,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  Container(
+                                    child: Text(
+                                      up_news_event[index].txt_date,
+                                      style: TextStyle(
+                                          fontSize: 8,
+                                          fontWeight: FontWeight.w500,
+                                          fontFamily: 'KhmerOSBattambang',
+                                          color: Colors.indigo[900]),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 15,
+                                  ),
+                                  Container(
+                                    child: Image.asset(
+                                      up_news_event[index].icon2,
+                                      width: 12,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  Container(
+                                    child: Text(
+                                      up_news_event[index].txt_time,
+                                      style: TextStyle(
+                                          fontSize: 8,
+                                          fontWeight: FontWeight.w500,
+                                          fontFamily: 'KhmerOSBattambang',
+                                          color: Colors.indigo[900]),
+                                    ),
+                                  ),
                                 ],
                               ),
                             ],
@@ -89,10 +140,8 @@ class _Upcoming_EventState extends State<Upcoming_Event> {
                   ),
                 ),
               ),
-
             );
           },
-
         ),
       ),
     );

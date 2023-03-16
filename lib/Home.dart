@@ -15,8 +15,8 @@ class _HomeState extends State<Home>with SingleTickerProviderStateMixin {
   late TabController controller;
 
   List pages=[
-    Grid_Home.grid_home(),
-    Grid_Acc.grid_acc(),
+    Grid_Home.Grid_Home(),
+    Grid_Acc.Grid_Acc(),
   ];
 
   int currentIndex = 0;

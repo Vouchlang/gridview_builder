@@ -12,6 +12,7 @@ class _FAQState extends State<FAQ> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xF5F5F7FE),
       appBar: AppBar(
         title: Text('FAQ',
             style: TextStyle(
@@ -39,9 +40,9 @@ class _FAQState extends State<FAQ> {
           itemCount: faq.length,
           itemBuilder: (context, index) {
             return Card(
-              color: Colors.amber,
+              color: Colors.white,
               margin: EdgeInsets.only(top: 10),
-              elevation: 2,
+              elevation: 3,
               shadowColor: Colors.grey[200],
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10)),

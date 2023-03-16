@@ -17,11 +17,6 @@ class _New_EventState extends State<New_Event> {
     "ព្រឹត្តិការណ៍មុនៗ",
   ];
 
-  List<IconData> icons = [
-    Icons.home,
-    Icons.explore,
-  ];
-
   List pages=[
     Upcoming_Event(),
     Past_Event()
@@ -52,23 +47,23 @@ class _New_EventState extends State<New_Event> {
           ),
           onPressed: ()=> Navigator.of(context).pop(),),
       ),
-      body: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children:[
-          Container(
-            alignment: Alignment.center,
-            child: SizedBox(
-              width: 330,
-              height: 75,
+      body: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children:[
+            Container(
+              height:62,
+              // alignment: Alignment.center,
               child: ListView.builder(
-                  physics: AlwaysScrollableScrollPhysics(),
+                  physics: ScrollPhysics(),
                   itemCount: tab_txt.length,
                   scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
                   itemBuilder: (ctx, index) {
                     return Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         GestureDetector(
                           onTap: () {
@@ -78,8 +73,8 @@ class _New_EventState extends State<New_Event> {
                           },
                           child: AnimatedContainer(
                             duration: Duration(milliseconds: 300),
-                            margin: EdgeInsets.all(15),
-                            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                            margin: EdgeInsets.all(10),
+                            padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
                                 color: current == index
                                     ? Colors.indigo[900]
@@ -93,14 +88,12 @@ class _New_EventState extends State<New_Event> {
                                   )
                                 ]
                             ),
-                            child: Center(
-                              child: Text(
-                                tab_txt[index],
-                                style: TextStyle(
-                                    color: current == index ? Colors.white : Colors.black,
-                                    fontFamily: 'KhmerOSbattambang',
-                                    fontSize: 12
-                                ),
+                            child: Text(
+                              tab_txt[index],
+                              style: TextStyle(
+                                  color: current == index ? Colors.white : Colors.black,
+                                  fontFamily: 'KhmerOSbattambang',
+                                  fontSize: 12
                               ),
                             ),
                           ),
@@ -109,10 +102,10 @@ class _New_EventState extends State<New_Event> {
                     );
                   }),
             ),
-          ),
-          Flexible(child: pages[current])
-        ]
+            Flexible(child: pages[current])
+          ]
 
+        ),
       ),
     );
   }
