@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '/Class_Model/Class_Career.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import '/Custom_AppBar/Custom_AppBar.dart';
@@ -16,7 +17,7 @@ class _CareerState extends State<Career> {
     return Scaffold(
       backgroundColor: Color(0xF5F5F7FE),
       appBar: AppBar(
-        title: Text('ព័ត៌មានការងារ',
+        title: Text('ព័ត៌មានការងារ'.tr,
             style: TextStyle(
               color: Colors.indigo[900],
               fontSize: 16,

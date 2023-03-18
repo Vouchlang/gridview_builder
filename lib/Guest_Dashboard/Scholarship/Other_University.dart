@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import '/Class_Model/Class_Scholarship_Out.dart';
 
@@ -103,7 +104,7 @@ class _Out_UniversityState extends State<Out_University> {
                                 onTap: () =>
                                     launchUrlString(o_scholarship[index].o_link),
                                 child: Text(
-                                  'អានបន្ថែម',
+                                  'អានបន្ថែម'.tr,
                                   style: TextStyle(
                                       fontSize: 10,
                                       fontFamily: 'KhmerOSbattambang',

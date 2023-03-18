@@ -49,11 +49,11 @@ class _HomeState extends State<Home>with SingleTickerProviderStateMixin {
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.home, size: 20,),
-              label: 'Home'.tr,
+              label: 'ទំព័រដើម'.tr,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.account_box, size: 20,),
-              label: 'Account'.tr,
+              label: 'ចូលគណនី'.tr,
             )
           ],
         ),

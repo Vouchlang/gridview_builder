@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Structure extends StatefulWidget {
   const Structure({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class _StructureState extends State<Structure> {
     return Scaffold(
         backgroundColor: Color(0xF5F5F7FE),
         appBar: AppBar(
-          title: Text('រចនាសម្ព័ន្ធរបស់សាកលវិទ្យាល័យ',
+          title: Text('រចនាសម្ព័ន្ធរបស់សាកលវិទ្យាល័យ'.tr,
               style: TextStyle(
                 color: Colors.indigo[900],
                 fontSize: 16,

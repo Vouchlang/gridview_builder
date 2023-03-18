@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gridview_builder/Guest_Dashboard/New_Event/Past_Event.dart';
 import 'package:gridview_builder/Guest_Dashboard/New_Event/Upcoming_Event.dart';
 import '/Class_Model/Class_Up_News_Events.dart';
@@ -29,7 +30,7 @@ class _New_EventState extends State<New_Event> {
     return Scaffold(
       backgroundColor: Color(0xF5F5F7FE),
       appBar: AppBar(
-        title: Text('ព្រឹត្តិការណ៍',
+        title: Text('ព្រឹត្តិការណ៍'.tr,
             style: TextStyle(
                 color: Colors.indigo[900],
                 fontSize: 16,
@@ -89,7 +90,7 @@ class _New_EventState extends State<New_Event> {
                                 ]
                             ),
                             child: Text(
-                              tab_txt[index],
+                              tab_txt[index].tr,
                               style: TextStyle(
                                   color: current == index ? Colors.white : Colors.black,
                                   fontFamily: 'KhmerOSbattambang',

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import '../../Class_Model/Class_Contact.dart';
 
@@ -15,7 +16,7 @@ class _ContactState extends State<Contact> {
     return Scaffold(
       backgroundColor: Color(0xF5F5F7FE),
       appBar: AppBar(
-        title: Text('ទំនាក់ទំនង',
+        title: Text('ទំនាក់ទំនង'.tr,
             style: TextStyle(
               color: Colors.indigo[900],
               fontSize: 16,
@@ -64,15 +65,18 @@ class _ContactState extends State<Contact> {
                                   SizedBox(
                                     width: 5,
                                   ),
-                                  Container(
-                                    width: 300,
-                                    child: Text(
-                                      contact[index].text,
-                                      textAlign: TextAlign.justify,
-                                      style: TextStyle(
-                                          fontSize: 12,
-                                          fontFamily: 'KhmerOSbattambang',
-                                          fontWeight: FontWeight.w500),
+                                  InkWell(
+                                    onTap: () => launchUrlString(contact[index].link),
+                                    child: Container(
+                                      width: 300,
+                                      child: Text(
+                                        contact[index].text.tr,
+                                        textAlign: TextAlign.justify,
+                                        style: TextStyle(
+                                            fontSize: 12,
+                                            fontFamily: 'KhmerOSbattambang',
+                                            fontWeight: FontWeight.w500),
+                                      ),
                                     ),
                                   ),
                                 ],

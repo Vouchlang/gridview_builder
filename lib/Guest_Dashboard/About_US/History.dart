@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class History extends StatefulWidget {
   const History({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class _HistoryState extends State<History> {
     return Scaffold(
       backgroundColor: Color(0xF5F5F7FE),
       appBar: AppBar(
-        title: Text('ប្រវត្តិ និងអត្ថន័យរបស់និមិត្តសញ្ញា',
+        title: Text('ប្រវត្តិ និងអត្ថន័យរបស់និមិត្តសញ្ញា'.tr,
             style: TextStyle(
               color: Colors.indigo[900],
               fontSize: 16,

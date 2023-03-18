@@ -25,47 +25,47 @@ class Grid_Home extends StatefulWidget {
 
 List<Home_Screen> home_screen = [
   Home_Screen(
-    name: 'Events',
+    name: 'ព្រឹត្តិការណ៍',
     img: 'assets/image/Guest_News.png',
     screen: New_Event(),
   ),
   Home_Screen(
-    name: 'Registration',
+    name: 'ការចុះឈ្មោះ',
     img: 'assets/image/Guest_Regis.png',
     screen: Registration(),
   ),
   Home_Screen(
-    name: 'Program',
+    name: 'កម្មវិធីសិក្សា',
     img: 'assets/image/Guest_Program.png',
     screen: Registration(),
   ),
   Home_Screen(
-    name: 'Scholarship',
+    name: 'អាហារូបករណ៍',
     img: 'assets/image/Guest_Scholarship.png',
     screen: Scholarship(),
   ),
   Home_Screen(
-    name: 'Career',
+    name: 'ព័ត៌មានការងារ',
     img: 'assets/image/Guest_Career.png',
     screen: Career(),
   ),
   Home_Screen(
-    name: 'Video',
+    name: 'វីដេអូ',
     img: 'assets/image/Guest_VDO.png',
     screen: Video(),
   ),
   Home_Screen(
-    name: 'Contact',
+    name: 'ទំនាក់ទំនង',
     img: 'assets/image/Guest_Contact.png',
     screen: Contact(),
   ),
   Home_Screen(
-    name: 'About US',
+    name: 'អំពីយើង',
     img: 'assets/image/Guest_About.png',
     screen: AboutUS(),
   ),
   Home_Screen(
-    name: 'Change Language',
+    name: 'ផ្លាស់ប្ដូរភាសា',
     img: 'assets/image/Guest_Language.png',
     screen: Change_Language(),
   ),

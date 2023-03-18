@@ -5,12 +5,12 @@ import 'package:get/get.dart';
 
 final List locale = [
   {
-    'name': 'KHMER',
+    'name': 'ភាសាខ្មែរ',
     'logo': 'assets/image/CL_Khmer.png',
     'locale': Locale('km', 'KH')
   },
   {
-    'name': 'ENGLISH',
+    'name': 'ភាសាអង់គ្លេស',
     'logo': 'assets/image/CL_English.png',
     'locale': Locale('en', 'US')
   },
@@ -26,36 +26,6 @@ class _Change_LanguageState extends State<Change_Language> {
   @override
   Widget build(BuildContext context) {
     return CardWidget();
-
-    // return Scaffold(
-    //     // body: buildLanguageDialog(context),
-    //     appBar: AppBar(
-    //       title: Text('title'.tr),
-    //     ),
-    //     body: Container(
-    //       width: double.infinity,
-    //       child: Column(
-    //         mainAxisAlignment: MainAxisAlignment.center,
-    //         crossAxisAlignment: CrossAxisAlignment.center,
-    //         children: [
-    //           Text(
-    //             'Events'.tr,
-    //             textAlign: TextAlign.center,
-    //             style: TextStyle(fontSize: 15),
-    //           ),
-    //           SizedBox(
-    //             height: 10,
-    //           ),
-    //           ElevatedButton(
-    //               onPressed: () {
-    //                 // buildLanguageDialog(context);
-    //                 showDialog(
-    //                     context: context, builder: (context) => CardWidget());
-    //               },
-    //               child: Text('change language'.tr)),
-    //         ],
-    //       ),
-    //     ));
   }
 }
 
@@ -81,14 +51,15 @@ class CardWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              'Language'.tr,
+              'ភាសា'.tr,
               style: TextStyle(
                   fontSize: 14,
                   fontFamily: 'KhmerOSbattambang',
                   fontWeight: FontWeight.bold),
             ),
+            SizedBox(height: 5,),
             Text(
-              'Please select the Language'.tr,
+              'សូមជ្រើសរើសភាសា'.tr,
               style: TextStyle(
                 fontSize: 10,
                 fontFamily: 'KhmerOSbattambang',

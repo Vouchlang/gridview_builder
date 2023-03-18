@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gridview_builder/Class_Model/Class_Video_Home.dart';
 
 
@@ -12,7 +13,7 @@ class Video_Playlist extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xF5F5F7FE),
       appBar: AppBar(
-        title: Text('វីដេអូ',
+        title: Text('វីដេអូ'.tr,
             style: TextStyle(
               color: Colors.indigo[900],
               fontSize: 16,

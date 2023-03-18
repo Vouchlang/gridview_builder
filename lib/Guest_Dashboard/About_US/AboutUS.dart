@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gridview_builder/Class_Model/Class_AboutUS.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
@@ -15,7 +16,7 @@ class _AboutUSState extends State<AboutUS> {
     return Scaffold(
       backgroundColor: Color(0xF5F5F7FE),
       appBar: AppBar(
-        title: Text('អំពីយើង',
+        title: Text('អំពីយើង'.tr,
             style: TextStyle(
               color: Colors.indigo[900],
               fontSize: 16,
@@ -39,7 +40,7 @@ class _AboutUSState extends State<AboutUS> {
             itemCount: aboutUS.length,
             itemBuilder: (context, index) {
               return Container(
-                margin: EdgeInsets.fromLTRB(10, 5, 10, 0),
+                margin: EdgeInsets.fromLTRB(6, 5, 6, 0),
                 child: Card(
                   elevation: 3,
                   shadowColor: Colors.grey[200],
@@ -64,7 +65,7 @@ class _AboutUSState extends State<AboutUS> {
                           Container(
                             width: 250,
                             child: Text(
-                              aboutUS[index].text,
+                              aboutUS[index].text.tr,
                               style: TextStyle(
                                   fontSize: 14,
                                   fontFamily: 'KhmerOSbattambang',

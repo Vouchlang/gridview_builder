@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '/Class_Model/Class_Registration.dart';
 
 class Registration extends StatefulWidget {
@@ -14,7 +15,7 @@ class _RegistrationState extends State<Registration> {
     return Scaffold(
         backgroundColor: Color(0xF5F5F7FE),
         appBar: AppBar(
-          title: Text('ការចុះឈ្មោះ',
+          title: Text('ការចុះឈ្មោះ'.tr,
               style: TextStyle(
                 color: Colors.indigo[900],
                 fontSize: 16,

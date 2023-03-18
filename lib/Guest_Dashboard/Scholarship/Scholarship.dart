@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gridview_builder/Guest_Dashboard/Scholarship/In_University.dart';
 import 'package:gridview_builder/Guest_Dashboard/Scholarship/Other_University.dart';
 import 'package:url_launcher/url_launcher_string.dart';
@@ -31,7 +32,7 @@ class _ScholarshipState extends State<Scholarship> {
       // extendBodyBehindAppBar: true,
       backgroundColor: Color(0xF5F5F7FE),
       appBar: AppBar(
-        title: Text('អាហារូបករណ៍',
+        title: Text('អាហារូបករណ៍'.tr,
             style: TextStyle(
               color: Colors.indigo[900],
               fontSize: 16,
@@ -91,7 +92,7 @@ class _ScholarshipState extends State<Scholarship> {
                                   ]
                               ),
                               child: Text(
-                                tab_txt[index],
+                                tab_txt[index].tr,
                                 style: TextStyle(
                                     color: current == index ? Colors.white : Colors.black,
                                     fontFamily: 'KhmerOSbattambang',

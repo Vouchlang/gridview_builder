@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Vision extends StatefulWidget {
   const Vision({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class _VisionState extends State<Vision> {
     return Scaffold(
       backgroundColor: Color(0xF5F5F7FE),
       appBar: AppBar(
-        title: Text('ចក្ខុវិស័យ បេសកកម្ម និងគុណតម្លៃ',
+        title: Text('ចក្ខុវិស័យ បេសកកម្ម និងគុណតម្លៃ'.tr,
             style: TextStyle(
               color: Colors.indigo[900],
               fontSize: 16,

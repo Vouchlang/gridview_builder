@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class President extends StatefulWidget {
   const President({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class _PresidentState extends State<President> {
     return Scaffold(
         backgroundColor: Color(0xF5F5F7FE),
         appBar: AppBar(
-          title: Text('សាររបស់សាកលវិទ្យាធិការ',
+          title: Text('សាររបស់សាកលវិទ្យាធិការ'.tr,
               style: TextStyle(
                 color: Colors.indigo[900],
                 fontSize: 16,

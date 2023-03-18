@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '/Guest_Dashboard/VDO/Video_Detail.dart';
 import 'package:readmore/readmore.dart';
 import '/Class_Model/Class_Video_Home.dart';
@@ -19,7 +20,7 @@ class _VideoState extends State<Video> {
     return Scaffold(
       backgroundColor: Color(0xF5F5F7FE),
       appBar: AppBar(
-        title: Text('វីដេអូ',
+        title: Text('វីដេអូ'.tr,
             style: TextStyle(
               color: Colors.indigo[900],
               fontSize: 16,
