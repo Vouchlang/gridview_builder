@@ -1,5 +1,7 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:gridview_builder/Guest_Dashboard/Notifications.dart';
+import 'package:get/get.dart';
 import 'Grid_Home.dart' as Grid_Home;
 import 'Grid_Acc.dart' as Grid_Acc;
 
@@ -31,7 +33,7 @@ class _HomeState extends State<Home>with SingleTickerProviderStateMixin {
     return Scaffold(
 
       body: pages[currentIndex],
-      bottomNavigationBar: SizedBox(
+      bottomNavigationBar:SizedBox(
         height: 50,
         child:  BottomNavigationBar(
           backgroundColor: Colors.white,
@@ -42,14 +44,16 @@ class _HomeState extends State<Home>with SingleTickerProviderStateMixin {
           unselectedItemColor: Colors.grey,
           selectedFontSize: 10,
           unselectedFontSize: 10,
+          selectedLabelStyle: TextStyle(fontFamily: 'KhmerOSbattambang'),
+          unselectedLabelStyle: TextStyle(fontFamily: 'KhmerOSbattambang'),
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.home, size: 20,),
-              label: 'ទំព័រដើម',
+              label: 'Home'.tr,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.account_box, size: 20,),
-              label: 'ចូលគណនី',
+              label: 'Account'.tr,
             )
           ],
         ),

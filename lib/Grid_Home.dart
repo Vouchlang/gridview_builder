@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:get/get.dart';
@@ -6,6 +7,7 @@ import 'package:gridview_builder/Guest_Dashboard/Change_Language/Change_Language
 import 'package:gridview_builder/Guest_Dashboard/FAQ/FAQ.dart';
 import 'package:gridview_builder/Guest_Dashboard/Scholarship/Scholarship.dart';
 import 'package:gridview_builder/Guest_Dashboard/VDO/Video.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'Guest_Dashboard/New_Event/News_Event.dart';
 import 'Guest_Dashboard/Registration/Registration.dart';
@@ -28,42 +30,42 @@ List<Home_Screen> home_screen = [
     screen: New_Event(),
   ),
   Home_Screen(
-    name: 'ការចុះឈ្មោះ',
+    name: 'Registration',
     img: 'assets/image/Guest_Regis.png',
     screen: Registration(),
   ),
   Home_Screen(
-    name: 'កម្មវិធីសិក្សា',
+    name: 'Program',
     img: 'assets/image/Guest_Program.png',
     screen: Registration(),
   ),
   Home_Screen(
-    name: 'អាហារូបករណ៍',
+    name: 'Scholarship',
     img: 'assets/image/Guest_Scholarship.png',
     screen: Scholarship(),
   ),
   Home_Screen(
-    name: 'ព័ត៌មានការងារ',
+    name: 'Career',
     img: 'assets/image/Guest_Career.png',
     screen: Career(),
   ),
   Home_Screen(
-    name: 'វីដេអូ',
+    name: 'Video',
     img: 'assets/image/Guest_VDO.png',
     screen: Video(),
   ),
   Home_Screen(
-    name: 'ទំនាក់ទំនង',
+    name: 'Contact',
     img: 'assets/image/Guest_Contact.png',
     screen: Contact(),
   ),
   Home_Screen(
-    name: 'អំពីយើង',
+    name: 'About US',
     img: 'assets/image/Guest_About.png',
     screen: AboutUS(),
   ),
   Home_Screen(
-    name: 'ផ្លាស់ប្ដូរភាសា',
+    name: 'Change Language',
     img: 'assets/image/Guest_Language.png',
     screen: Change_Language(),
   ),
@@ -85,8 +87,39 @@ class _Grid_HomeState extends State<Grid_Home> {
 
   // late String List locale = ['KHMER', 'ENGLISH'];
 
+  int activeIndex = 0;
+
   @override
   Widget build(BuildContext context) {
+    final image_slides = [
+      'assets/image/1.jpg',
+      'assets/image/2.jpg',
+      'assets/image/3.jpg',
+      'assets/image/4.jpg',
+      'assets/image/5.jpg',
+    ];
+
+    Widget buildImage(String image_slide, int index) => Container(
+          margin: EdgeInsets.symmetric(horizontal: 5),
+          color: Colors.grey[200],
+          width: double.infinity,
+          child: Image.asset(
+            image_slide,
+            fit: BoxFit.cover,
+          ),
+        );
+
+    Widget buildIndicator() => AnimatedSmoothIndicator(
+          activeIndex: activeIndex,
+          count: image_slides.length,
+      effect: WormEffect(
+        activeDotColor: Color(0xFF1A237E),
+        dotColor: Colors.grey,
+        dotHeight: 10,
+        dotWidth: 10
+      )
+        );
+
     return Scaffold(
       backgroundColor: Color(0xF5F5F7FE),
       appBar: AppBar(
@@ -148,7 +181,9 @@ class _Grid_HomeState extends State<Grid_Home> {
         elevation: 1,
       ),
       body: Center(
-          child: ListView(children: [
+          child: ListView(
+              shrinkWrap: true,
+              children: [
         SizedBox(
           height: 10,
         ),
@@ -156,32 +191,35 @@ class _Grid_HomeState extends State<Grid_Home> {
           height: 175,
           width: double.infinity,
           child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: ImageSlideshow(
-                children: [
-                  Image.asset(
-                    'assets/image/1.jpg',
-                    fit: BoxFit.cover,
-                  ),
-                  Image.asset(
-                    'assets/image/2.jpg',
-                    fit: BoxFit.cover,
-                  ),
-                  Image.asset(
-                    'assets/image/3.jpg',
-                    fit: BoxFit.cover,
-                  ),
-                  Image.asset(
-                    'assets/image/4.jpg',
-                    fit: BoxFit.cover,
-                  ),
-                ],
-              ),
-            ),
-          ),
+              padding: EdgeInsets.symmetric(vertical: 0, horizontal: 0),
+              child: ClipRRect(
+                // borderRadius: BorderRadius.circular(10),
+                child: Expanded(
+                  child: CarouselSlider.builder(
+                      options: CarouselOptions(
+                        height: double.infinity,
+                        // autoPlay: true,
+                        pageSnapping: true,
+                        enableInfiniteScroll: false,
+                        autoPlayInterval: Duration(seconds: 3),
+                        // viewportFraction: 1,
+                        enlargeCenterPage: true,
+                        enlargeStrategy: CenterPageEnlargeStrategy.zoom,
+                        onPageChanged: ((index, reason) =>
+                            setState(() => activeIndex = index)),
+                      ),
+                      itemCount: image_slides.length,
+                      itemBuilder: (context, index, realIndex) {
+                        final image_slide = image_slides[index];
+                        return buildImage(image_slide, index);
+                      }),
+                ),
+              )),
         ),
+        SizedBox(
+          height: 7,
+        ),
+        Center(child: buildIndicator(),),
         SizedBox(
           height: 7,
         ),
@@ -205,10 +243,15 @@ class _Grid_HomeState extends State<Grid_Home> {
                         ),
                         child: InkWell(
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(
+                            // Navigator.push(context, MaterialPageRoute(
+                            //     builder: (BuildContext context) {
+                            //   return home_screen[index].screen;
+                            // }));
+                            showDialog(
+                                context: context,
                                 builder: (BuildContext context) {
-                              return home_screen[index].screen;
-                            }));
+                                  return home_screen[index].screen;
+                                });
                           },
                           child: Container(
                             padding: EdgeInsets.only(left: 15),
@@ -286,3 +329,24 @@ class _Grid_HomeState extends State<Grid_Home> {
     );
   }
 }
+
+// child: ImageSlideshow(
+//   children: [
+//     Image.asset(
+//       'assets/image/1.jpg',
+//       fit: BoxFit.cover,
+//     ),
+//     Image.asset(
+//       'assets/image/2.jpg',
+//       fit: BoxFit.cover,
+//     ),
+//     Image.asset(
+//       'assets/image/3.jpg',
+//       fit: BoxFit.cover,
+//     ),
+//     Image.asset(
+//       'assets/image/4.jpg',
+//       fit: BoxFit.cover,
+//     ),
+//   ],
+// ),

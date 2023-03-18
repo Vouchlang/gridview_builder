@@ -19,7 +19,7 @@ class _Out_UniversityState extends State<Out_University> {
             itemCount: o_scholarship.length,
             itemBuilder: (context, index) {
               return Container(
-                margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
+                margin: EdgeInsets.fromLTRB(10, 0, 10, 5),
                 child: Card(
                   elevation: 3,
                   shadowColor: Colors.grey[200],

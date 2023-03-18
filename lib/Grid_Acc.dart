@@ -34,6 +34,7 @@ class _Grid_AccState extends State<Grid_Acc> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: ListView(
+          physics: NeverScrollableScrollPhysics(),
       children: [
         Container(
             // height: double.infinity,
@@ -50,11 +51,11 @@ class _Grid_AccState extends State<Grid_Acc> {
                 ),
                 GridView.count(
                   shrinkWrap: true,
-                  physics: ScrollPhysics(),
+                  physics: NeverScrollableScrollPhysics(),
                   crossAxisCount: 2,
                   mainAxisSpacing: 3,
                   crossAxisSpacing: 3,
-                  childAspectRatio: 2,
+                  childAspectRatio: 1.95,
                   padding: EdgeInsets.symmetric(vertical: 0, horizontal: 6),
                   children: List.generate(
                       account_screen.length,

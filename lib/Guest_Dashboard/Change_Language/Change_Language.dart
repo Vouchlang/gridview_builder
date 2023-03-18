@@ -5,117 +5,28 @@ import 'package:get/get.dart';
 
 final List locale = [
   {
-    'name': 'ភាសាខ្មែរ',
+    'name': 'KHMER',
     'logo': 'assets/image/CL_Khmer.png',
     'locale': Locale('km', 'KH')
   },
   {
-    'name': 'ភាសាអង់គ្លេស',
+    'name': 'ENGLISH',
     'logo': 'assets/image/CL_English.png',
     'locale': Locale('en', 'US')
   },
 ];
 
-class Change_Language extends StatelessWidget {
+class Change_Language extends StatefulWidget {
+  @override
+  State<Change_Language> createState() => _Change_LanguageState();
+}
+
+class _Change_LanguageState extends State<Change_Language> {
   // final List locale = [
-  //   {
-  //     'name': 'ភាសាខ្មែរ',
-  //     'logo': 'assets/image/CL_Khmer.png',
-  //     'locale': Locale('km', 'KH')
-  //   },
-  //   {
-  //     'name': 'ភាសាអង់គ្លេស',
-  //     'logo': 'assets/image/CL_English.png',
-  //     'locale': Locale('en', 'US')
-  //   },
-  // ];
-
-  // updateLanguage(Locale locale) {
-  //   Get.back();
-  //   Get.updateLocale(locale);
-  // }
-
-  // buildLanguageDialog(BuildContext context) {
-  //   showDialog(
-  //       context: context,
-  //       builder: (builder) {
-  //         return AlertDialog(
-  //           shape:
-  //               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-  //           title: Column(
-  //             mainAxisSize: MainAxisSize.min,
-  //             children: [
-  //               Text(
-  //                 'ភាសា',
-  //                 style: TextStyle(
-  //                     fontSize: 14,
-  //                     fontFamily: 'KhmerOSbattambang',
-  //                     fontWeight: FontWeight.bold),
-  //               ),
-  //               Text(
-  //                 'សូមជ្រើសរើសភាសា',
-  //                 style: TextStyle(
-  //                   fontSize: 10,
-  //                   fontFamily: 'KhmerOSbattambang',
-  //                 ),
-  //               ),
-  //             ],
-  //           ),
-  //           content: Container(
-  //             height: 60,
-  //             padding: EdgeInsets.all(5),
-  //             alignment: Alignment.center,
-  //             child: ListView.separated(
-  //                 scrollDirection: Axis.horizontal,
-  //                 shrinkWrap: true,
-  //                 itemBuilder: (context, index) {
-  //                   return InkWell(
-  //                     child: Container(
-  //                       // color: Colors.amber,
-  //                       height: 50,
-  //                       width: 75,
-  //                       alignment: Alignment.center,
-  //                       child: Column(
-  //                           mainAxisSize: MainAxisSize.min,
-  //                           crossAxisAlignment: CrossAxisAlignment.center,
-  //                           mainAxisAlignment: MainAxisAlignment.center,
-  //                           children: [
-  //                             Image.asset(
-  //                               locale[index]['logo'],
-  //                               scale: 5,
-  //                             ),
-  //                             SizedBox(
-  //                               height: 5,
-  //                             ),
-  //                             Text(
-  //                               locale[index]['name'],
-  //                               style: TextStyle(
-  //                                   fontSize: 10,
-  //                                   fontFamily: 'KhmerOSbattambang'),
-  //                             ),
-  //                           ]),
-  //                     ),
-  //                     onTap: () {
-  //                       updateLanguage(locale[index]['locale']);
-  //                     },
-  //                   );
-  //                 },
-  //                 separatorBuilder: (context, index) {
-  //                   return VerticalDivider(
-  //                     width: 50,
-  //                   );
-  //                 },
-  //                 itemCount: locale.length),
-  //           ),
-  //         );
-  //       });
-  // }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: CardWidget()
-    );
+    return CardWidget();
+
     // return Scaffold(
     //     // body: buildLanguageDialog(context),
     //     appBar: AppBar(
@@ -148,41 +59,6 @@ class Change_Language extends StatelessWidget {
   }
 }
 
-class CustomDialog extends StatelessWidget {
-  const CustomDialog({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Dialog(
-        child: Stack(
-          children: [
-            CardWidget(),
-            Positioned(
-              height: 20,
-              width: 20,
-              child: OutlinedButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: Icon(
-                  Icons.close,
-                  color: Colors.white,
-                  size: 20,
-                ),
-                style: OutlinedButton.styleFrom(
-                    padding: EdgeInsets.all(0),
-                    backgroundColor: Colors.indigo[900],
-                    shape: CircleBorder(),
-                    shadowColor: Colors.transparent),
-              ),
-              top: 0,
-              right: 0,
-            )
-          ],
-        ));
-  }
-}
-
 class CardWidget extends StatelessWidget {
   const CardWidget({Key? key}) : super(key: key);
 
@@ -205,23 +81,23 @@ class CardWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              'ភាសា',
+              'Language'.tr,
               style: TextStyle(
                   fontSize: 14,
                   fontFamily: 'KhmerOSbattambang',
                   fontWeight: FontWeight.bold),
             ),
             Text(
-              'សូមជ្រើសរើសភាសា',
+              'Please select the Language'.tr,
               style: TextStyle(
                 fontSize: 10,
                 fontFamily: 'KhmerOSbattambang',
               ),
             ),
             Container(
-              height: 75,
+              height: 65,
               padding: EdgeInsets.all(5),
-              alignment: Alignment.center,
+              alignment: Alignment.bottomCenter,
               child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                   shrinkWrap: true,
@@ -245,7 +121,7 @@ class CardWidget extends StatelessWidget {
                                 height: 5,
                               ),
                               Text(
-                                locale[index]['name'],
+                                locale[index]['name'.tr],
                                 style: TextStyle(
                                     fontSize: 10,
                                     fontFamily: 'KhmerOSbattambang'),
@@ -270,3 +146,39 @@ class CardWidget extends StatelessWidget {
     );
   }
 }
+
+// class CustomDialog extends StatelessWidget {
+//   const CustomDialog({Key? key}) : super(key: key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Dialog(
+//         child: Stack(
+//           children: [
+//             CardWidget(),
+//             Positioned(
+//               height: 20,
+//               width: 20,
+//               child: OutlinedButton(
+//                 onPressed: () {
+//                   Navigator.pop(context);
+//                 },
+//                 child: Icon(
+//                   Icons.close,
+//                   color: Colors.white,
+//                   size: 20,
+//                 ),
+//                 style: OutlinedButton.styleFrom(
+//                     padding: EdgeInsets.all(0),
+//                     backgroundColor: Colors.indigo[900],
+//                     shape: CircleBorder(),
+//                     shadowColor: Colors.transparent),
+//               ),
+//               top: 0,
+//               right: 0,
+//             )
+//           ],
+//         ));
+//   }
+// }
+
