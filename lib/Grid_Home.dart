@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:gridview_builder/Guest_Dashboard/About_US/AboutUS.dart';
 import 'package:gridview_builder/Guest_Dashboard/Change_Language/Change_Language.dart';
 import 'package:gridview_builder/Guest_Dashboard/FAQ/FAQ.dart';
+import 'package:gridview_builder/Guest_Dashboard/Program/Program.dart';
 import 'package:gridview_builder/Guest_Dashboard/Scholarship/Scholarship.dart';
 import 'package:gridview_builder/Guest_Dashboard/VDO/Video.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -37,7 +38,7 @@ List<Home_Screen> home_screen = [
   Home_Screen(
     name: 'កម្មវិធីសិក្សា',
     img: 'assets/image/Guest_Program.png',
-    screen: Registration(),
+    screen: Program(),
   ),
   Home_Screen(
     name: 'អាហារូបករណ៍',
