@@ -60,6 +60,8 @@ class _RegistrationState extends State<Registration> {
                                 fontSize: 14,
                                 fontFamily: 'KhmerOSbattambang',
                                 fontWeight: FontWeight.w600,
+
+
                               ),
                             ),
                           ),
