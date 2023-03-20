@@ -114,8 +114,8 @@ class _Grid_HomeState extends State<Grid_Home> {
         effect: WormEffect(
             activeDotColor: Color(0xFF1A237E),
             dotColor: Colors.grey,
-            dotHeight: 10,
-            dotWidth: 10));
+            dotHeight: 8,
+            dotWidth: 8));
 
     return Scaffold(
       backgroundColor: Color(0xF5F5F7FE),
@@ -183,7 +183,7 @@ class _Grid_HomeState extends State<Grid_Home> {
           height: 10,
         ),
         Container(
-          height: 175,
+          height: 200,
           width: double.infinity,
           child: Padding(
               padding: EdgeInsets.symmetric(vertical: 0, horizontal: 0),
