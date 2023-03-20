@@ -39,7 +39,7 @@ class _RegistrationState extends State<Registration> {
                 itemCount: registration.length,
                 itemBuilder: (context, index) {
                   return Card(
-                    margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
+                    margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
                     elevation: 3,
                     shadowColor: Colors.grey[200],
                     shape: RoundedRectangleBorder(
@@ -60,6 +60,8 @@ class _RegistrationState extends State<Registration> {
                                 fontSize: 14,
                                 fontFamily: 'KhmerOSbattambang',
                                 fontWeight: FontWeight.w600,
+
+
                               ),
                             ),
                           ),

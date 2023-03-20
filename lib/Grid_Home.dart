@@ -85,8 +85,6 @@ class _Grid_HomeState extends State<Grid_Home> {
   final Uri urlTel = Uri.parse("https://t.me/cpsteamsports");
   final Uri urlWeb = Uri.parse("http://www.usea.edu.kh/");
 
-  // late String List locale = ['KHMER', 'ENGLISH'];
-
   int activeIndex = 0;
 
   @override
@@ -110,15 +108,13 @@ class _Grid_HomeState extends State<Grid_Home> {
         );
 
     Widget buildIndicator() => AnimatedSmoothIndicator(
-          activeIndex: activeIndex,
-          count: image_slides.length,
-      effect: WormEffect(
-        activeDotColor: Color(0xFF1A237E),
-        dotColor: Colors.grey,
-        dotHeight: 10,
-        dotWidth: 10
-      )
-        );
+        activeIndex: activeIndex,
+        count: image_slides.length,
+        effect: WormEffect(
+            activeDotColor: Color(0xFF1A237E),
+            dotColor: Colors.grey,
+            dotHeight: 10,
+            dotWidth: 10));
 
     return Scaffold(
       backgroundColor: Color(0xF5F5F7FE),
@@ -181,9 +177,7 @@ class _Grid_HomeState extends State<Grid_Home> {
         elevation: 1,
       ),
       body: Center(
-          child: ListView(
-              shrinkWrap: true,
-              children: [
+          child: ListView(shrinkWrap: true, children: [
         SizedBox(
           height: 10,
         ),
@@ -219,7 +213,9 @@ class _Grid_HomeState extends State<Grid_Home> {
         SizedBox(
           height: 7,
         ),
-        Center(child: buildIndicator(),),
+        Center(
+          child: buildIndicator(),
+        ),
         SizedBox(
           height: 7,
         ),
@@ -279,7 +275,7 @@ class _Grid_HomeState extends State<Grid_Home> {
           ),
         ),
         SizedBox(
-          height: 10,
+          height: 7,
         ),
         Card(
           elevation: 3,
