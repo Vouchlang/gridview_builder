@@ -11,6 +11,7 @@ class Past_Event_Detail extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xF5F5F7FE),
       appBar: AppBar(
+        centerTitle: false,
         title: Text('ព្រឹត្តិការណ៍',
             style: TextStyle(
               color: Colors.indigo[900],

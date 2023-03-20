@@ -15,6 +15,7 @@ class _RegistrationState extends State<Registration> {
     return Scaffold(
         backgroundColor: Color(0xF5F5F7FE),
         appBar: AppBar(
+          centerTitle: false,
           title: Text('ការចុះឈ្មោះ'.tr,
               style: TextStyle(
                 color: Colors.indigo[900],

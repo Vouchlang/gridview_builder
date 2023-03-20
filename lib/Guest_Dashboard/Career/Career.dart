@@ -17,6 +17,7 @@ class _CareerState extends State<Career> {
     return Scaffold(
       backgroundColor: Color(0xF5F5F7FE),
       appBar: AppBar(
+        centerTitle: false,
         title: Text('ព័ត៌មានការងារ'.tr,
             style: TextStyle(
               color: Colors.indigo[900],

@@ -14,6 +14,7 @@ class _VisionState extends State<Vision> {
     return Scaffold(
       backgroundColor: Color(0xF5F5F7FE),
       appBar: AppBar(
+        centerTitle: false,
         title: Text('ចក្ខុវិស័យ បេសកកម្ម និងគុណតម្លៃ'.tr,
             style: TextStyle(
               color: Colors.indigo[900],

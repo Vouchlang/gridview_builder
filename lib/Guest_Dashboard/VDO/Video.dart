@@ -20,6 +20,7 @@ class _VideoState extends State<Video> {
     return Scaffold(
       backgroundColor: Color(0xF5F5F7FE),
       appBar: AppBar(
+        centerTitle: false,
         title: Text('វីដេអូ'.tr,
             style: TextStyle(
               color: Colors.indigo[900],

@@ -30,6 +30,7 @@ class _New_EventState extends State<New_Event> {
     return Scaffold(
       backgroundColor: Color(0xF5F5F7FE),
       appBar: AppBar(
+        centerTitle: false,
         title: Text('ព្រឹត្តិការណ៍'.tr,
             style: TextStyle(
                 color: Colors.indigo[900],

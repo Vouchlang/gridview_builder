@@ -18,6 +18,7 @@ class _ProgramState extends State<Program> {
     return Scaffold(
       backgroundColor: Color(0xF5F5F7FE),
       appBar: AppBar(
+        centerTitle: false,
         title: Text('កម្មវិធីសិក្សា'.tr,
             style: TextStyle(
               color: Colors.indigo[900],

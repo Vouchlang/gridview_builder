@@ -30,6 +30,7 @@ class _Program_Major_DetailState extends State<Program_Major_Detail_Main> {
     return Scaffold(
       backgroundColor: Color(0xF5F5F7FE),
       appBar: AppBar(
+        centerTitle: false,
         title: Text('កម្មវិធីសិក្សា'.tr,
             style: TextStyle(
               color: Colors.indigo[900],

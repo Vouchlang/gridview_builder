@@ -16,6 +16,7 @@ class _AboutUSState extends State<AboutUS> {
     return Scaffold(
       backgroundColor: Color(0xF5F5F7FE),
       appBar: AppBar(
+        centerTitle: false,
         title: Text('អំពីយើង'.tr,
             style: TextStyle(
               color: Colors.indigo[900],
