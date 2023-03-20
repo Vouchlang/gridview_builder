@@ -81,7 +81,7 @@ class _Grid_AccState extends State<Grid_Acc> {
                                       scale: 7,
                                     ),
                                     SizedBox(
-                                      height: 5,
+                                      height: 7,
                                     ),
                                     Text(
                                       account_screen[index].name,
