@@ -48,33 +48,37 @@ class _FAQState extends State<FAQ> {
                   borderRadius: BorderRadius.circular(10)),
               child: Column(
                 children: [
-                  ExpansionTile(
-                    collapsedIconColor: Colors.indigo[900],
-                    iconColor: Colors.indigo[900],
-                    title: Text(
-                      faq[index].question,
-                      textAlign: TextAlign.justify,
-                      style: TextStyle(
-                          fontSize: 12,
-                          fontFamily: 'KhmerOSbattambang',
-                          color: Colors.black),
-                    ),
-                    textColor: Colors.black,
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
+                  Theme(
+                    data: Theme.of(context)
+                        .copyWith(dividerColor: Colors.transparent),
+                    child: ExpansionTile(
+                      collapsedIconColor: Colors.indigo[900],
+                      iconColor: Colors.indigo[900],
+                      title: Text(
+                        faq[index].question,
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
+                            fontSize: 12,
+                            fontFamily: 'KhmerOSbattambang',
+                            color: Colors.black),
+                      ),
+                      textColor: Colors.black,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            ),
-                        padding: EdgeInsets.fromLTRB(15, 0, 15, 10),
-                        child: Text(
-                          faq[index].answer,
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                              fontSize: 12, fontFamily: 'KhmerOSbattambang'),
-                        ),
-                      )
-                    ],
-                  ),
+                          ),
+                          padding: EdgeInsets.fromLTRB(15, 0, 15, 10),
+                          child: Text(
+                            faq[index].answer,
+                            textAlign: TextAlign.justify,
+                            style: TextStyle(
+                                fontSize: 12, fontFamily: 'KhmerOSbattambang'),
+                          ),
+                        )
+                      ],
+                    ),
+                  )
                 ],
               ),
             );
