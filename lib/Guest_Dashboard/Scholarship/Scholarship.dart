@@ -79,6 +79,7 @@ class _ScholarshipState extends State<Scholarship> {
                               duration: Duration(milliseconds: 300),
                               margin: EdgeInsets.all(10),
                               padding: EdgeInsets.all(10),
+                              width: 160,
                               decoration: BoxDecoration(
                                   color: current == index
                                       ? Colors.indigo[900]
@@ -94,6 +95,7 @@ class _ScholarshipState extends State<Scholarship> {
                               ),
                               child: Text(
                                 tab_txt[index].tr,
+                                textAlign: TextAlign.center,
                                 style: TextStyle(
                                     color: current == index ? Colors.white : Colors.black,
                                     fontFamily: 'KhmerOSbattambang',

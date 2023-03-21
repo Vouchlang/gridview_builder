@@ -31,11 +31,11 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
         body: pages[currentIndex],
-        bottomNavigationBar: SizedBox(
-          height: 100,
+        bottomNavigationBar: Container(
+          padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+          // height: 100,
           child: BottomNavigationBar(
-            backgroundColor: Colors.white,
-            elevation: 1,
+            elevation: 0,
             onTap: onTap,
             currentIndex: currentIndex,
             selectedItemColor: Colors.indigo[900],

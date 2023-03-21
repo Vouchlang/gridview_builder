@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '/Class_Model/Class_Up_News_Events.dart';
 
 class Up_Event_Detail extends StatelessWidget {
@@ -12,7 +13,7 @@ class Up_Event_Detail extends StatelessWidget {
       backgroundColor: Color(0xF5F5F7FE),
       appBar: AppBar(
         centerTitle: false,
-        title: Text('ព្រឹត្តិការណ៍',
+        title: Text('ព្រឹត្តិការណ៍'.tr,
             style: TextStyle(
               color: Colors.indigo[900],
               fontSize: 16,

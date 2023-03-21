@@ -1,5 +1,8 @@
+import 'package:configurable_expansion_tile_null_safety/configurable_expansion_tile_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:gridview_builder/Class_Model/Class_Program_Major_Detail.dart';
+import 'package:gridview_builder/Guest_Dashboard/Program/Program.dart';
+import 'package:gridview_builder/Guest_Dashboard/Program/Program_Major_Detail_Main.dart';
 
 import '../../Class_Model/Class_Program_Associate.dart';
 import '../New_Event/News_Event.dart';
@@ -36,21 +39,19 @@ class _Program_AssociateState extends State<Program_Associate> {
                 itemBuilder: (context, index) {
                   return Container(
                     child: Column(
+                      mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Theme(
                           data: Theme.of(context)
                               .copyWith(dividerColor: Colors.transparent),
-                          child: ExpansionTile(
-                            tilePadding: EdgeInsets.symmetric(
-                                horizontal: -10, vertical: 0),
-                            collapsedIconColor: Colors.indigo[900],
-                            iconColor: Colors.indigo[900],
-                            textColor: Colors.black,
-                            title: Container(
+                          child: ConfigurableExpansionTile(
+                            header: Container(
+                              width: 323,
+                              alignment: Alignment.centerLeft,
                               child: Text(
                                 program_major_detail[index].title,
-                                textAlign: TextAlign.justify,
+                                textAlign: TextAlign.left,
                                 style: TextStyle(
                                     color: Colors.indigo[900],
                                     fontSize: 12,
@@ -58,19 +59,17 @@ class _Program_AssociateState extends State<Program_Associate> {
                                     fontWeight: FontWeight.w600),
                               ),
                             ),
-                            children: [
-                              Container(
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 15, vertical: 0),
-                                child: Text(
-                                  program_major_detail[index].description,
-                                  textAlign: TextAlign.justify,
-                                  style: TextStyle(
-                                      fontSize: 12,
-                                      fontFamily: 'KhmerOSbattambang'),
-                                ),
-                              )
-                            ],
+                            animatedWidgetFollowingHeader: Icon(Icons.keyboard_arrow_down_rounded, size: 17, color: Colors.indigo[900],),
+                            childrenBody: Container(
+                              padding: EdgeInsets.symmetric(horizontal: 15),
+                              child: Text(
+                                program_major_detail[index].description,
+                                textAlign: TextAlign.justify,
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    fontFamily: 'KhmerOSbattambang'),
+                              ),
+                            )
                           ),
                         )
                       ],

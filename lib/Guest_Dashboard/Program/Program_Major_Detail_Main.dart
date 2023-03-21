@@ -77,6 +77,7 @@ class _Program_Major_DetailState extends State<Program_Major_Detail_Main> {
                               duration: Duration(milliseconds: 300),
                               margin: EdgeInsets.all(10),
                               padding: EdgeInsets.all(10),
+                              width: 150,
                               decoration: BoxDecoration(
                                   color: current == index
                                       ? Colors.indigo[900]
@@ -92,6 +93,7 @@ class _Program_Major_DetailState extends State<Program_Major_Detail_Main> {
                               ),
                               child: Text(
                                 tab_txt[index].tr,
+                                textAlign: TextAlign.center,
                                 style: TextStyle(
                                     color: current == index ? Colors.white : Colors.black,
                                     fontFamily: 'KhmerOSbattambang',
