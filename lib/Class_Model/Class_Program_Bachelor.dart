@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gridview_builder/Guest_Dashboard/FAQ/FAQ.dart';
-import '../Guest_Dashboard/Program/Program_Semester.dart';
+import '../Guest_Dashboard/Program/Program_Score_Main.dart';
 
 class Program_Bachelor_Year {
   late final String name;
@@ -10,8 +9,8 @@ class Program_Bachelor_Year {
 }
 
 List<Program_Bachelor_Year> pro_bach_year = [
-  Program_Bachelor_Year(name: 'ឆ្នាំទី១', screen: FAQ()),
-  Program_Bachelor_Year(name: 'ឆ្នាំទី២', screen: FAQ()),
-  Program_Bachelor_Year(name: 'ឆ្នាំទី៣', screen: FAQ()),
-  Program_Bachelor_Year(name: 'ឆ្នាំទី៤', screen: FAQ())
+  Program_Bachelor_Year(name: 'ឆ្នាំទី១', screen: Program_Score_Main()),
+  Program_Bachelor_Year(name: 'ឆ្នាំទី២', screen: Program_Score_Main()),
+  Program_Bachelor_Year(name: 'ឆ្នាំទី៣', screen: Program_Score_Main()),
+  Program_Bachelor_Year(name: 'ឆ្នាំទី៤', screen: Program_Score_Main())
 ];
