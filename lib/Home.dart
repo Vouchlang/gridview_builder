@@ -1,9 +1,7 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:gridview_builder/Guest_Dashboard/Notifications.dart';
 import 'package:get/get.dart';
-import 'Grid_Home.dart' as Grid_Home;
-import 'Grid_Acc.dart' as Grid_Acc;
+import '/Guest_Acc/Guest_Dashboard/Guest_Home.dart' as Guest_Home;
+import '/Guest_Acc/Guest_Dashboard/Guest_Acc.dart' as Guest_Acc;
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -16,8 +14,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   late TabController controller;
 
   List pages = [
-    Grid_Home.Grid_Home(),
-    Grid_Acc.Grid_Acc(),
+    Guest_Home.Guest_Home(),
+    Guest_Acc.Guest_Acc(),
   ];
 
   int currentIndex = 0;
