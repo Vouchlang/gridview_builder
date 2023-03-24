@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gridview_builder/Student_Dashboard/Student_Dashboard/Student_Acc.dart';
-import '../../Student_Dashboard/Student_Dashboard/Student_LogIn.dart';
+import 'package:gridview_builder/Student_Acc/Student_Dashboard/Student_Acc.dart';
+import '../../Student_Acc/Student_Dashboard/Student_LogIn.dart';
 import '../Guest_Class_Model/Class_Account_Screen.dart';
 import 'New_Event/News_Event.dart';
 
