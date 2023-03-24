@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:gridview_builder/Guest_Acc/Guest_Dashboard/Program/Program_Semester.dart';
 import '../../Guest_Class_Model/Class_Program.dart';
 import 'Program_Major_Detail_Main.dart';
 
-class Program extends StatelessWidget {
+class Program extends StatefulWidget {
   const Program({Key? key}) : super(key: key);
 
+  @override
+  State<Program> createState() => _ProgramState();
+}
+
+class _ProgramState extends State<Program> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,6 +36,28 @@ class Program extends StatelessWidget {
             ),
             onPressed: () => Navigator.of(context).pop(),
           ),
+          actions: [
+            Padding(
+              padding: EdgeInsets.all(10),
+              child: Container(
+                  child: Center(
+                child: IconButton(
+                    onPressed: () {
+                      setState(() {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (ctx) => Program_Semester()));
+                      });
+                    },
+                    icon: Icon(
+                      Icons.search,
+                      color: Colors.indigo[900],
+                      size: 20,
+                    )),
+              )),
+            ),
+          ],
         ),
         body: ListView(
           padding: EdgeInsets.only(bottom: 10),

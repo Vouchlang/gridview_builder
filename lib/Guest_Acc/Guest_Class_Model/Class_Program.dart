@@ -21,6 +21,8 @@ final program_List = <Program_List>[
       majors: [
         Program_List(image: 'assets/image/f-it.png', title: 'ស្ថាបត្យកម្ម'),
         Program_List(image: 'assets/image/f-it.png', title: 'ព័ត៌មានវិទ្យា'),
+        Program_List(
+            image: 'assets/image/f-it.png', title: 'វិស្វកម្មសំណង់សុីវិល'),
       ]),
   Program_List(
       image: 'assets/image/f-law.png',

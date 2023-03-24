@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'Home.dart';
 import 'Splash_Screen.dart';
 import 'localeString.dart';
 
