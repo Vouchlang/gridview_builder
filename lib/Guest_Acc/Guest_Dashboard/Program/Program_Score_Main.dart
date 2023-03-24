@@ -73,7 +73,7 @@ class _Program_Score_MainState extends State<Program_Score_Main> {
                               duration: Duration(milliseconds: 300),
                               margin: EdgeInsets.all(10),
                               padding: EdgeInsets.all(10),
-                              width: 160,
+                              width: 150,
                               decoration: BoxDecoration(
                                   color: current == index
                                       ? Colors.indigo[900]
