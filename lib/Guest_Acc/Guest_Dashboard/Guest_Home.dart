@@ -188,13 +188,13 @@ class _Guest_HomeState extends State<Guest_Home> {
               padding: EdgeInsets.symmetric(vertical: 0, horizontal: 0),
               child: ClipRRect(
                 // borderRadius: BorderRadius.circular(10),
-                child: Expanded(
+                child: Flexible(
                   child: CarouselSlider.builder(
                       options: CarouselOptions(
                         height: double.infinity,
                         // autoPlay: true,
                         pageSnapping: true,
-                        enableInfiniteScroll: false,
+                        enableInfiniteScroll: true,
                         autoPlayInterval: Duration(seconds: 3),
                         // viewportFraction: 1,
                         enlargeCenterPage: true,

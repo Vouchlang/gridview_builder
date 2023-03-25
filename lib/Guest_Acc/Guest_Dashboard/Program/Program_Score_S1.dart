@@ -68,6 +68,7 @@ class _Program_Score_S1State extends State<Program_Score_S1> {
               width: double.infinity,
               color: Colors.white,
               child: ListView.builder(
+                physics: NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   itemCount: class_program_score_s1.length,
                   itemBuilder: (context, index) {
