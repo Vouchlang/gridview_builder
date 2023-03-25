@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:readmore/readmore.dart';
 import '../../Guest_Class_Model/Class_Video_Home.dart';
-import 'Video_Detail.dart';
+import 'Test_Vido.dart';
+import 'Video_Display.dart';
+
 class Video extends StatefulWidget {
   const Video({Key? key}) : super(key: key);
 
@@ -46,7 +48,11 @@ class _VideoState extends State<Video> {
                       context,
                       MaterialPageRoute(
                           builder: (ctx) =>
-                              Video_Detail(data: video_home[index])));
+                              Video_Display(data: video_home[index])));
+                  // Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //         builder: ((context) => VideoPlayerScreen())));
                 },
                 child: Container(
                   padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
@@ -65,9 +71,8 @@ class _VideoState extends State<Video> {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(5),
                                 image: DecorationImage(
-                                    image: AssetImage(
-                                      video_home[index].img,
-                                    ),
+                                    image: NetworkImage(
+                                        video_home[index].youtube_thumbnail),
                                     fit: BoxFit.cover),
                               ),
                             ),
