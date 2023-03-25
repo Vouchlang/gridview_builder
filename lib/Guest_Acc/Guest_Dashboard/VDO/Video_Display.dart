@@ -6,9 +6,9 @@ import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import '../../Guest_Class_Model/Class_Video_Home.dart';
 import '../../Guest_Class_Model/Class_Video_Playlist.dart';
 
-class Video_Detail extends StatelessWidget {
+class Video_Display extends StatelessWidget {
   final Video data;
-  const Video_Detail({Key? key, required this.data}) : super(key: key);
+  const Video_Display({Key? key, required this.data}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,15 +44,16 @@ class Video_Detail extends StatelessWidget {
                 controller: YoutubePlayerController(
                     initialVideoId: YoutubePlayer.convertUrlToId(data.link)!,
                     flags: YoutubePlayerFlags(
-                        autoPlay: false,
-                      )),
+                      autoPlay: false,
+                    )),
                 showVideoProgressIndicator: true,
                 bottomActions: [
                   CurrentPosition(),
-                  ProgressBar(isExpanded: true,),
+                  ProgressBar(
+                    isExpanded: true,
+                  ),
                   PlaybackSpeedButton(),
                   FullScreenButton()
-
                 ],
               ),
             ),
@@ -105,66 +106,75 @@ class Video_Detail extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.start,
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Row(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    width: 125,
-                                    height: 75,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(5),
-                                      image: DecorationImage(
-                                          image: AssetImage(
-                                            video_playlist[index].img,
-                                          ),
-                                          fit: BoxFit.cover),
+                              InkWell(
+                                onTap: () {
+                                  print("Video Link: " +
+                                      video_playlist[index].youtube_thumbnail);
+                                },
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      width: 125,
+                                      height: 75,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(5),
+                                        image: DecorationImage(
+                                            image: NetworkImage(
+                                              video_playlist[index]
+                                                  .youtube_thumbnail,
+                                            ),
+                                            fit: BoxFit.cover),
+                                      ),
                                     ),
-                                  ),
-                                  SizedBox(
-                                    width: 15,
-                                  ),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Container(
-                                        width: 200,
-                                        child: Text(video_playlist[index].title,
+                                    SizedBox(
+                                      width: 15,
+                                    ),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Container(
+                                          width: 200,
+                                          child: Text(
+                                              video_playlist[index].title,
+                                              textAlign: TextAlign.justify,
+                                              style: TextStyle(
+                                                fontSize: 10,
+                                                fontFamily: 'KhmerOSbattambang',
+                                                fontWeight: FontWeight.w500,
+                                              )),
+                                        ),
+                                        SizedBox(
+                                          height: 5,
+                                        ),
+                                        SingleChildScrollView(
+                                            child: Container(
+                                          width: 200,
+                                          child: ReadMoreText(
+                                            video_playlist[index].caption,
+                                            trimLines: 1,
                                             textAlign: TextAlign.justify,
+                                            trimMode: TrimMode.Line,
+                                            moreStyle: TextStyle(
+                                                color: Colors.grey[700]),
+                                            lessStyle: TextStyle(
+                                                color: Colors.grey[700]),
                                             style: TextStyle(
-                                              fontSize: 10,
+                                              fontSize: 8,
                                               fontFamily: 'KhmerOSbattambang',
                                               fontWeight: FontWeight.w500,
-                                            )),
-                                      ),
-                                      SizedBox(
-                                        height: 5,
-                                      ),
-                                      SingleChildScrollView(
-                                          child: Container(
-                                        width: 200,
-                                        child: ReadMoreText(
-                                          video_playlist[index].caption,
-                                          trimLines: 1,
-                                          textAlign: TextAlign.justify,
-                                          trimMode: TrimMode.Line,
-                                          moreStyle: TextStyle(
-                                              color: Colors.grey[700]),
-                                          lessStyle: TextStyle(
-                                              color: Colors.grey[700]),
-                                          style: TextStyle(
-                                            fontSize: 8,
-                                            fontFamily: 'KhmerOSbattambang',
-                                            fontWeight: FontWeight.w500,
+                                            ),
                                           ),
-                                        ),
-                                      ))
-                                    ],
-                                  ),
-                                ],
+                                        ))
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
                             ]),
                       );

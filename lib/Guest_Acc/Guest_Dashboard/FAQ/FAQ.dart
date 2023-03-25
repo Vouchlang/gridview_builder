@@ -40,47 +40,50 @@ class _FAQState extends State<FAQ> {
         child: ListView.builder(
           itemCount: faq.length,
           itemBuilder: (context, index) {
-            return Card(
-              color: Colors.white,
-              margin: EdgeInsets.only(top: 10),
-              elevation: 3,
-              shadowColor: Colors.grey[200],
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)),
-              child: Column(
-                children: [
-                  Theme(
-                    data: Theme.of(context)
-                        .copyWith(dividerColor: Colors.transparent),
-                    child: ExpansionTile(
-                      collapsedIconColor: Colors.indigo[900],
-                      iconColor: Colors.indigo[900],
-                      title: Text(
-                        faq[index].question,
-                        textAlign: TextAlign.justify,
-                        style: TextStyle(
-                            fontSize: 12,
-                            fontFamily: 'KhmerOSbattambang',
-                            color: Colors.black),
+            return Container(
+              child: Card(
+                color: Colors.amber,
+                margin: EdgeInsets.only(top: 10),
+                elevation: 3,
+                shadowColor: Colors.grey[200],
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
+                child: Column(
+                  children: [
+                    Theme(
+                      data: Theme.of(context)
+                          .copyWith(dividerColor: Colors.transparent),
+                      child: ExpansionTile(
+                        collapsedIconColor: Colors.indigo[900],
+                        iconColor: Colors.indigo[900],
+                        title: Text(
+                          faq[index].question,
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                              fontSize: 12,
+                              fontFamily: 'KhmerOSbattambang',
+                              color: Colors.black),
+                        ),
+                        textColor: Colors.black,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            padding: EdgeInsets.fromLTRB(15, 0, 15, 10),
+                            child: Text(
+                              faq[index].answer,
+                              textAlign: TextAlign.justify,
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  fontFamily: 'KhmerOSbattambang'),
+                            ),
+                          )
+                        ],
                       ),
-                      textColor: Colors.black,
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          padding: EdgeInsets.fromLTRB(15, 0, 15, 10),
-                          child: Text(
-                            faq[index].answer,
-                            textAlign: TextAlign.justify,
-                            style: TextStyle(
-                                fontSize: 12, fontFamily: 'KhmerOSbattambang'),
-                          ),
-                        )
-                      ],
-                    ),
-                  )
-                ],
+                    )
+                  ],
+                ),
               ),
             );
           },
