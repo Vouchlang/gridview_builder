@@ -1,61 +1,114 @@
+import 'dart:convert';
+import 'dart:typed_data';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:gridview_builder/Guest_Acc/Guest_Dashboard/VDO/Test_Hero.dart';
+import 'package:http/http.dart' as http;
+
+const apiEndpoint =
+    'http://172.17.19.22/hosting_api/Guest/fetch_guest_event_past.php';
+
+Future<List<dynamic>> fetchData() async {
+  final response = await http.get(Uri.parse(apiEndpoint));
+
+  if (response.statusCode == 200) {
+    final jsonBody = json.decode(response.body);
+
+    if (jsonBody is List) {
+      return jsonBody;
+    } else if (jsonBody is Map) {
+      // Handle object response
+      return [jsonBody];
+    } else {
+      throw Exception('Invalid API response');
+    }
+  } else {
+    throw Exception('Failed to load data: ${response.statusCode}');
+  }
+}
 
 class Testing extends StatefulWidget {
-  const Testing({super.key});
+  const Testing({Key? key}) : super(key: key);
 
   @override
-  State<Testing> createState() => _TestingState();
+  _TestingState createState() => _TestingState();
 }
-
-class Test {
-  late final String id;
-  late final Color color;
-
-  Test({required this.id, required this.color});
-}
-
-List<Test> test = [
-  Test(id: 'id-1', color: Colors.amber),
-  Test(id: 'id-2', color: Colors.red),
-  Test(id: 'id-3', color: Colors.green),
-  Test(id: 'id-4', color: Colors.brown),
-  Test(id: 'id-5', color: Colors.pink),
-];
 
 class _TestingState extends State<Testing> {
+  List<dynamic> _data = [];
+  bool _isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadData();
+  }
+
+  Future<void> _loadData() async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    try {
+      final data = await fetchData();
+      setState(() {
+        _data = data;
+        _isLoading = false;
+      });
+    } catch (e) {
+      setState(() {
+        _isLoading = false;
+        _data = [];
+      });
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text('Error'),
+            content: Text('Failed to load data: ${e.toString()}'),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text('OK'),
+              ),
+            ],
+          );
+        },
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Testing Hero in Lists'),
+        title: const Text('Test API'),
       ),
-      body: Container(
-          child: ListView.builder(
-        itemBuilder: (context, index) {
-          return InkWell(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (BuildContext context) => Test_Hero(
-                            tested: test[index],
-                          )));
-            },
-            child: Hero(
-              tag: test[index],
-              child: Container(
-                width: 100,
-                height: 100,
-                margin: EdgeInsets.all(5),
-                color: test[index].color,
-              ),
-            ),
-          );
-        },
-        itemCount: test.length,
-      )),
+      body: _isLoading
+          ? const Center(child: CircularProgressIndicator())
+          : _data.isEmpty
+              ? const Center(child: Text('No data available'))
+              : ListView.builder(
+                  itemCount: _data.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    final item = _data[index];
+                    Uint8List? imagedata = item['past_image'];
+                    return Container(
+                      child: Column(
+                        children: [
+                          Text(item['past_title']),
+                          Text(item['past_detail']),
+                          Text(item['past_month']),
+                          Text(item['past_day']),
+                          Image.memory(
+                            imagedata!,
+                            fit: BoxFit.cover,
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                ),
     );
   }
 }
