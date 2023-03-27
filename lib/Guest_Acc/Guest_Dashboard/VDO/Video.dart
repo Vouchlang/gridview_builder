@@ -44,15 +44,13 @@ class _VideoState extends State<Video> {
             itemBuilder: (context, index) {
               return InkWell(
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (ctx) =>
-                              Video_Display(data: video_home[index])));
                   // Navigator.push(
                   //     context,
                   //     MaterialPageRoute(
-                  //         builder: ((context) => VideoPlayerScreen())));
+                  //         builder: (ctx) =>
+                  //             Video_Display(data: video_home[index])));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: ((context) => Testing())));
                 },
                 child: Container(
                   padding: EdgeInsets.fromLTRB(10, 10, 10, 0),

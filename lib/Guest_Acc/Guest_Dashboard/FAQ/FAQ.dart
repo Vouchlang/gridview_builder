@@ -42,7 +42,6 @@ class _FAQState extends State<FAQ> {
           itemBuilder: (context, index) {
             return Container(
               child: Card(
-                color: Colors.amber,
                 margin: EdgeInsets.only(top: 10),
                 elevation: 3,
                 shadowColor: Colors.grey[200],
