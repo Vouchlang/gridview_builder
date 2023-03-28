@@ -1,8 +1,9 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-
-import '../New_Event/Up_Event_Detail.dart';
+import '../../../Guest_Class_Model/Class_Up_News_Events.dart';
+import '../../New_Event/Up_Event_Detail.dart';
+import 'api_model.dart';
 
 const apiEndpoint =
     'http://192.168.3.34/hosting_api/Guest/fetch_guest_event_upcoming.php';
@@ -26,14 +27,14 @@ Future<List<dynamic>> fetchData() async {
   }
 }
 
-class Testing extends StatefulWidget {
-  const Testing({Key? key}) : super(key: key);
+class Upcoming_Event extends StatefulWidget {
+  const Upcoming_Event({Key? key}) : super(key: key);
 
   @override
-  _TestingState createState() => _TestingState();
+  State<Upcoming_Event> createState() => _Upcoming_EventState();
 }
 
-class _TestingState extends State<Testing> {
+class _Upcoming_EventState extends State<Upcoming_Event> {
   List<dynamic> _data = [];
   bool _isLoading = true;
 

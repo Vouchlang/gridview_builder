@@ -51,12 +51,13 @@ class _VideoState extends State<Video> {
                   //         builder: (ctx) =>
                   //             Video_Display(data: video_home[index])));
                   // ----------------------------------
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: ((context) => Testing())));
-                  // Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //         builder: ((context) => MyDataWidget())));
+                  // Navigator.push(context,
+                  //     MaterialPageRoute(builder: ((context) => Testing())));
+                  // --------------------------------
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) => UpcomingEvent())));
                 },
                 child: Container(
                   padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
