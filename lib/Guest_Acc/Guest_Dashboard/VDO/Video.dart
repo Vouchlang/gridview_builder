@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:readmore/readmore.dart';
 import '../../Guest_Class_Model/Class_Video_Home.dart';
+import 'Test_API/api_main.dart';
+import 'Test_Vido.dart';
 // import 'Video_Display.dart';
 
 class Video extends StatefulWidget {
@@ -48,8 +50,13 @@ class _VideoState extends State<Video> {
                   //     MaterialPageRoute(
                   //         builder: (ctx) =>
                   //             Video_Display(data: video_home[index])));
-                  // Navigator.push(context,
-                  //     MaterialPageRoute(builder: ((context) => Testing())));
+                  // ----------------------------------
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: ((context) => Testing())));
+                  // Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //         builder: ((context) => MyDataWidget())));
                 },
                 child: Container(
                   padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
