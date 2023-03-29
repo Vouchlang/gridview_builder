@@ -56,10 +56,8 @@ class _VideoState extends State<Video> {
                   // Navigator.push(context,
                   //     MaterialPageRoute(builder: ((context) => Testing())));
                   // --------------------------------
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: ((context) => UpcomingEvent())));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: ((context) => DemoApi())));
                 },
                 child: Container(
                   padding: EdgeInsets.fromLTRB(10, 10, 10, 0),

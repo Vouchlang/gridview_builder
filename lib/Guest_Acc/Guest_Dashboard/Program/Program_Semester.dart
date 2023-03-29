@@ -52,7 +52,6 @@ class _Program_SemesterState extends State<Program_Semester> {
             child: ListView.builder(
               itemCount: program_List
                   .where((program) => program.majors.any((major) => major.title
-                      .toString()
                       .toLowerCase()
                       .contains(_searchQuery.toLowerCase())))
                   .expand((program) => program.majors)
@@ -62,7 +61,6 @@ class _Program_SemesterState extends State<Program_Semester> {
                 final filteredMajor = program_List
                     .where((program) => program.majors.any((major) => major
                         .title
-                        .toString()
                         .toLowerCase()
                         .contains(_searchQuery.toLowerCase())))
                     .expand((program) => program.majors)
