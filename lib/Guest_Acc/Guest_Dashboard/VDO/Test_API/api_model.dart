@@ -1,30 +1,27 @@
+import 'package:json_annotation/json_annotation.dart';
+part 'api_model.g.dart';
+
+@JsonSerializable()
 class Event {
-  final String image;
-  final String title;
-  final String detail;
-  final String day;
-  final String date;
-  final String month;
-  final String year;
+  final String upcoming_image;
+  final String upcoming_title;
+  final String upcoming_detail;
+  final String upcoming_day;
+  final String upcoming_date;
+  final String upcoming_month;
+  final String upcoming_year;
+  final String upcoming_time;
 
   Event(
-      {required this.image,
-      required this.title,
-      required this.detail,
-      required this.day,
-      required this.date,
-      required this.month,
-      required this.year});
+      {required this.upcoming_image,
+      required this.upcoming_title,
+      required this.upcoming_detail,
+      required this.upcoming_day,
+      required this.upcoming_date,
+      required this.upcoming_month,
+      required this.upcoming_year,
+      required this.upcoming_time});
 
-  factory Event.fromJson(Map<String, dynamic> json) {
-    return Event(
-      image: json['upcoming_image'],
-      title: json['upcoming_title'],
-      detail: json['upcoming_detail'],
-      day: json['upcoming_day'],
-      date: json['upcoming_date'],
-      month: json['upcoming_month'],
-      year: json['upcoming_year'],
-    );
-  }
+  factory Event.fromJson(Map<String, dynamic> json) => _$EventFromJson(json);
+  Map<String, dynamic> toJson() => _$EventToJson(this);
 }
