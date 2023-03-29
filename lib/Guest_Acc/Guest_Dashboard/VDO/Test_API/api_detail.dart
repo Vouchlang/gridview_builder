@@ -23,9 +23,11 @@ class Upcoming_Event extends StatelessWidget {
             Container(
               width: double.maxFinite,
               height: 150,
-              child: Image.network(
-                getImageUrl(data.upcoming_image),
-                fit: BoxFit.fitWidth,
+              child: InteractiveViewer(
+                child: Image.network(
+                  getImageUrl(data.upcoming_image),
+                  fit: BoxFit.fitWidth,
+                ),
               ),
             ),
             Container(
